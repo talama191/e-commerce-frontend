@@ -1,0 +1,167 @@
+<section class="container aifai-detail">
+    <div class="row">
+        <div class="col-md-1 mini-images">
+            <img src="../../assets/img/product/bag/center.jpg" alt="">
+            <img src="../../assets/img/product/bag/close.jpg" alt="">
+            <img src="../../assets/img/product/bag/edge.jpg" alt="">
+            <img src="../../assets/img/product/bag/man.jpg" alt="">
+        </div>
+        <div class="col-md-5 product-slide">
+            <img src="{{product.img}}" alt="">
+        </div>
+        <div class="col-md-6 product-detail">
+            <h1 class="product-title">{{product.name}}</h1>
+            <a class="category-title" href="#"><span> </span></a>
+            <p class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <span><a href="#">(5 customer reviews)</a></span>
+            </p>
+            <p class="short-description">
+                 
+            </p>
+
+            <p class="price">
+                <span>VND {{product.price}} </span>
+                <s>VND 500000</s>
+            </p>
+
+            <form class="form-quantity" action="#">
+                <p>
+                    <span class="quantity-wrapper">
+                        <button class="btn btn-quantity">
+                            <i class="fas fa-minus"></i>
+                        </button>
+                        <input type="text" class="form-control input-quantity">
+                        <button class="btn btn-quantity">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                        <button type="button" class="add-cart-btn btn" (click)="addToCart(product)">
+                            <i class="fas fa-plus"></i><span>ADD TO CART</span>
+                        </button>
+                    </span>
+                </p>
+            </form>
+
+            <p class="btn-wishlist">
+                <a href="#" class="btn btn-primary">
+                    <i class="far fa-heart"></i>
+                    Add to Wishlist
+                </a>
+            </p>
+            <div class="small-info">
+                <p>PRODUCT ID: <span>{{product.id}}</span></p>
+                <p>SKU: <span>123</span></p>
+                <p>CATEGORY: <span>BAGS</span></p>
+            </div>
+        </div>
+    </div>
+    <div class="row description-bar">
+        <ul class="description-header">
+            <li [ngClass]="{'active':isShowDesc==true}">
+                <a type="button" (click)="openDesc()">Description</a>
+            </li>
+            <li [ngClass]="{'active':isShowInfo==true}">
+                <a type="button" (click)="openInfo()">Additional information</a>
+            </li>
+            <li [ngClass]="{'active':isShowRate==true}">
+                <a type="button" (click)="openRate()">Reviews (5)</a>
+            </li>
+        </ul>
+        <div class="description-details" *ngIf="isShowDesc">
+            <p>
+                Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+                Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero
+                sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.
+            </p>
+        </div>
+        <div class="extra-info" *ngIf="isShowInfo">
+            <table>
+                <tbody>
+                    <tr>
+                        <th scope="row">TRIM</th>
+                        <td><a href="#">THICK JERSEY, SWEAT FABRIC</a></td>
+                    </tr>
+                    <tr class="even">
+                        <th scope="row">MATERIAL</th>
+                        <td><a href="#">60% COTTON, 40% POLYESTER</a></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">SIZE</th>
+                        <td colspan="2"><a href="#">S,M,L,XL,XXL</a></td>
+                    </tr>
+                    <tr class="even">
+                        <th scope="row">FIT</th>
+                        <td colspan="2"><a href="#">SLIM-FIT</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="reviews" *ngIf="isShowRate">
+            <h3 class="review-title">5 REVIEWS FOR ASAP BAG</h3>
+            <div class="review">
+                <div class="avatar">
+                    <img src="	https://secure.gravatar.com/avatar/1edd7ca6c7b4a8177b4ed2bcd523f723?s=60&d=mm&r=g"
+                        alt="">
+                </div>
+                <div class="review-details">
+                    <p class="username">ROB</p>
+                    <p class="review-date">MARCH 5, 2015</p>
+                    <p class="review-comment">It is great!</p>
+                </div>
+                <div class="rate">
+                    <p class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </p>
+                </div>
+            </div>
+            <div class="review">
+                <div class="avatar">
+                    <img src="	https://secure.gravatar.com/avatar/1edd7ca6c7b4a8177b4ed2bcd523f723?s=60&d=mm&r=g"
+                        alt="">
+                </div>
+                <div class="review-details">
+                    <p class="username">ROB</p>
+                    <p class="review-date">MARCH 5, 2015</p>
+                    <p class="review-comment">It is great!</p>
+                </div>
+                <div class="rate">
+                    <p class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </p>
+                </div>
+            </div>
+            <div class="review">
+                <div class="avatar">
+                    <img src="	https://secure.gravatar.com/avatar/1edd7ca6c7b4a8177b4ed2bcd523f723?s=60&d=mm&r=g"
+                        alt="">
+                </div>
+                <div class="review-details">
+                    <p class="username">ROB</p>
+                    <p class="review-date">MARCH 5, 2015</p>
+                    <p class="review-comment">It is great!</p>
+                </div>
+                <div class="rate">
+                    <p class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

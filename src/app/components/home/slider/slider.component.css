@@ -1,0 +1,102 @@
+.carousel {
+    width: 100%;
+}
+
+.aifai-slider .carousel-inner img {
+    height: 500px;
+    width: auto;
+}
+
+.aifai-slider .carousel-inner .carousel-item {
+    position: relative;
+}
+
+.aifai-slider .carousel-inner .carousel-item .d-block {
+    width: 100%;
+}
+
+.carousel-inner .first-item div {
+    position: absolute;
+    width: 405px;
+    height: 100px;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+    text-align: center;
+}
+
+.carousel-inner .first-item div img {
+    width: 100%;
+    height: 100px;
+}
+
+.carousel-inner .first-item div a {
+    border-radius: 0;
+    border: 1px solid #fff;
+    background-color: transparent;
+    color: #fff;
+    margin-top: 2rem;
+    cursor: pointer;
+}
+
+.carousel-inner .first-item div a:hover {
+    color: #fff;
+}
+
+.second-item div {
+    position: absolute;
+    width: 25%;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+}
+
+.carousel-inner .second-item div .img_1 {
+    width: 350px;
+    height: auto;
+}
+
+.carousel-inner .second-item div .img_2 {
+    width: 350px;
+    height: auto;
+}
+
+.carousel-inner .second-item div .img_3 {
+    width: 350px;
+    height: auto;
+}
+
+.carousel-inner .second-item div .img_4 {
+    width: 350px;
+    height: auto;
+}
+
+.carousel-inner .third-item img:last-child {
+    position: absolute;
+    top: 0;
+    right: 10rem;
+    height: 50rem;
+}
+
+.carousel-inner .third-item .text-slider {
+    position: absolute;
+    top: 40%;
+    left: 15%;
+}
+
+.carousel-inner .third-item .text-slider a {
+    border-radius: 0;
+    margin-top: 2rem;
+    background-color: black;
+    font-size: 1rem;
+    padding-left: 1.2rem;
+    padding-right: 1.2rem;
+}
+
+.carousel-inner .third-item .text-slider h3 {
+    font-size: 3rem;
+}
+
+.image-slider{
+    height: 500px;
+}

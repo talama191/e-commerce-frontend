@@ -1,0 +1,30 @@
+.header-wrapper {
+    background-color: #ffffff;
+    z-index: 10;
+    border-bottom: 1px solid #f7f7f7;
+}
+
+.header-wrapper .container {
+    position: relative;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.logo-wrapper{
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 20px;
+}
+
+.aifai-utility {
+    display: flex;
+    align-items: center;
+    position: relative;
+}

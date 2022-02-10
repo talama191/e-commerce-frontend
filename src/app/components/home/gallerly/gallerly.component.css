@@ -1,0 +1,79 @@
+.aifai-gallerly {
+    width: 100%;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.gallerly-wrapper .row {
+    height: 100%;
+}
+
+/* .gallerly-wrapper .row {
+    position: relative;
+    margin-left: -30px;
+    height: 100%;
+} */
+
+.aifai-gallerly .gallerly-item {
+    width: 33.33%;
+    float: left;
+    padding: 5px;
+}
+
+.aifai-gallerly .gallerly-item a {
+    overflow: hidden;
+    position: relative;
+    display: block;
+    height: 100%;
+}
+
+.aifai-gallerly .gallerly-item a span {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.aifai-gallerly .gallerly-item a img {
+    width: 100%;
+    /* height: 100%; */
+    height: auto;
+    transition: transform 0.5s;
+}
+
+.aifai-gallerly .gallerly-item :hover img {
+    transform: scale(1.1);
+}
+
+.aifai-gallerly .gallerly-item .category-text-container {
+    width: 120px;
+    height: 70px;
+    position: absolute;
+    /* z-index: 3; */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid #fff;
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
+}
+
+.aifai-gallerly .gallerly-item .category-text-content {
+    width: 100%;
+    height: calc(100% - 0.4rem);
+    position: absolute;
+    border-top: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+}
+
+.aifai-gallerly .gallerly-item .category-text-content strong {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 1.5rem;
+}

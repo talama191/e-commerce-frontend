@@ -1,0 +1,106 @@
+.aifai-footer {
+    background-color: #222;
+}
+
+.aifai-footer .inner-footer {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -1rem;
+    padding-top: 2rem;
+    padding-bottom: 3rem;
+}
+
+.aifai-footer .inner-footer .nav-menu {
+    font-size: 1rem;
+    color: #eee;
+}
+
+.aifai-footer .inner-footer .nav-content a {
+    font-size: 0.9rem;
+    color: #959595;
+}
+
+.aifai-footer .inner-footer .nav-content a:hover {
+    color: #eee;
+}
+
+.aifai-footer .inner-footer .social-networks .social-icon {
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    margin-right: 2px;
+    margin-bottom: 2px;
+    background-color: #3a3a3a;
+    text-align: center;
+}
+
+.aifai-footer .inner-footer .social-networks .social-icon a {
+    color: #959595;
+    font-size: 0.8rem;
+}
+
+.aifai-footer .inner-footer>li {
+    display: block;
+    width: calc(16.6% - 1rem);
+    margin-left: 1rem;
+}
+
+.aifai-footer .inner-footer li {
+    list-style: none;
+}
+
+.aifai-footer .footer-bottom .bottom-nav ul li {
+    display: inline-block;
+}
+
+.aifai-footer .footer-bottom .bottom-nav {
+    color: #959595;
+}
+
+.aifai-footer .footer-bottom .bottom-nav a {
+    color: #959595;
+    border-right: 1px solid #959595;
+    padding: 0 0.5rem;
+}
+
+.aifai-footer .footer-bottom .bottom-nav .copyright {
+    margin-bottom: 0;
+}
+
+.aifai-footer .footer-bottom .bottom-nav .bottom-menu {
+    font-size: 0.8rem;
+}
+
+.aifai-footer .footer-bottom .bottom-nav .bottom-menu li:first-child a {
+    padding-left: 0;
+}
+
+.aifai-footer .footer-bottom .bottom-nav .bottom-menu li:last-child a {
+    border-right: 0;
+}
+
+.aifai-footer .footer-bottom .row .col-md-6:last-child {
+    position: relative;
+}
+
+.aifai-footer .footer-bottom {
+    padding-top: 2rem;
+    padding-bottom: 3rem;
+    border-top: 1px solid #959595;
+}
+
+.aifai-footer .footer-bottom .payments {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+
+.aifai-footer .footer-bottom .payments .payment {
+    display: inline;
+    margin-right: 1rem;
+}
+
+.aifai-footer .footer-bottom .payments .payment img {
+    height: 0.9rem;
+}

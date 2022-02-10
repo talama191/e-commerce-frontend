@@ -1,0 +1,22 @@
+<div class="shop container">
+    <div class="row trending-header">
+        <h2>SHOP</h2>
+        <p>SHOWING 1- 16 OF 45 RESULTS</p>
+        <p class="dash"></p>
+    </div>
+    <div class="row product-items">
+        <div *ngFor="let product of products" class="col-md-3 product-item">
+            <a href="/product/{{product.id}}" class="img-wrapper">
+                <img class="steady-image" src="{{product.img}}" alt="">
+                <img class="hover-image" src="../../assets/img/trending/cap2.jpg" alt="">
+            </a>
+            <div class="info-wrapper">
+                <h4><a href="/product/{{product.id}}">{{product.name}}</a></h4>
+                <a href="#"><i class="fas fa-plus"></i></a>
+                <div class="clear"></div>
+            </div>
+            <a href="#">{{product.categoryD}}</a>
+            <span><s>$50</s> ${{product.price}}</span>
+        </div>
+    </div>
+</div>

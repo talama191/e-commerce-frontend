@@ -1,0 +1,48 @@
+form {
+    padding: 2rem;
+    border: 1px solid rgb(202, 202, 202);
+}
+
+h1 {
+    font-weight: 300;
+    font-size: 1.8rem;
+    margin-top: 2rem;
+    color: #222;
+}
+h5{
+    font-weight: 300;
+    font-size: 1.1rem;
+}
+h2 {
+    font-weight: 300;
+    font-size: 24px;
+    margin-bottom: 2rem;
+}
+
+.username, .password {
+    outline: none;
+    border-radius: 0;
+}
+
+.row {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.btn {
+    background-color: #222;
+    border-radius: 0;
+    border: none;
+    color: #fff;
+}
+
+.form-control:focus, .form-control:active {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.btn:focus, .btn:active {
+    outline: none !important;
+    box-shadow: none !important;
+    background-color: none;
+}

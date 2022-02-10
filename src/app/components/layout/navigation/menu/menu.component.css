@@ -1,0 +1,116 @@
+.aifai-navbar {
+    margin: 0;
+    height: 3rem;
+}
+
+.aifai-navbar>li {
+    display: inline-block;
+}
+
+.aifai-navbar>li {
+    height: 100%;
+}
+
+.aifai-navbar>li>a {
+    text-decoration: none;
+    display: flex;
+    height: 100%;
+    align-items: center;
+    padding: 5px 10px;
+    text-transform: uppercase;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+.aifai-navbar>li:hover {
+    background-color: #f7f7f7;
+}
+
+.logo-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.home-nav:hover .home-mega {
+    visibility: visible;
+}
+
+.home-mega {
+    position: absolute;
+    width: 150px;
+    text-indent: 10px;
+    padding: 10px 0;
+    background-color: #f7f7f7;
+    text-transform: uppercase;
+    visibility: hidden;
+    z-index: 1;
+}
+
+.home-mega li {
+    line-height: 17px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    cursor: pointer;
+}
+
+.home-mega li:first-child {
+    background-color: #efefef;
+}
+
+.home-mega li:hover {
+    background-color: #efefef;
+}
+
+.home-mega li a {
+    font-size: 14px;
+    font-weight: 350;
+}
+
+.home-mega li p {
+    font-size: 11px;
+    margin-bottom: 0;
+    font-weight: 200;
+}
+
+.shop-nav:hover .shop-mega {
+    visibility: visible;
+}
+
+.shop-mega {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    background-color: #f7f7f7;
+    display: flex;
+    padding: 2rem 1rem;
+    visibility: hidden;
+    z-index: 1
+}
+
+.shop-mega .sub-mega {
+    height: 100%;
+    width: 20%;
+    text-transform: uppercase;
+}
+
+.sub-mega:last-child {
+    height: 100%;
+}
+
+.sub-mega-image {
+    width: 4rem;
+}
+
+.sub-mega h4 {
+    font-size: 1.2rem;
+    font-weight: 300;
+}
+
+.sub-mega li {
+    font-size: 0.8rem;
+    font-weight: 300;
+}
+
+.black-friday {
+    width: 100%;
+    height: auto;
+}

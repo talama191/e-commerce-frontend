@@ -1,0 +1,18 @@
+.aifai-brand {
+    margin-bottom: 3rem;
+    display: block;
+}
+
+.aifai-brand .item img {
+    overflow: hidden;
+    height: 5rem;
+}
+
+.aifai-brand .item img {
+    width: 10rem;
+    height: 5rem;
+}
+
+.owl-nav, .owl-dots {
+    display: none;
+}

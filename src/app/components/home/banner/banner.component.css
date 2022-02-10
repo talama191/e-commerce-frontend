@@ -1,0 +1,45 @@
+.aifai-banner {
+    width: 100%;
+    height: 150px;
+    margin-bottom: 2rem;
+}
+
+.aifai-banner .banner-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    border: 1px solid #eee;
+    box-shadow: inset 0 0 0 3px #fff, inset 0 0 0 4px #eee;
+    padding: 2rem;
+}
+
+.aifai-banner .banner-content .banner-text {
+    width: 70%;
+    position: relative;
+}
+
+.aifai-banner .banner-content .banner-text .inner-banner-text {
+    width: 70%;
+    position: absolute;
+    top: 50%;
+    left: 15%;
+    transform: translate(-15%, -50%);
+}
+
+.aifai-banner .banner-content .banner-text .inner-banner-text p {
+    margin-bottom: 0;
+}
+
+.aifai-banner .banner-content .banner-button {
+    width: 30%;
+    position: relative;
+}
+
+.aifai-banner .banner-content .banner-button a {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 0;
+    background-color: black;
+}

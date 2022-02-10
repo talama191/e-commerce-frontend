@@ -1,0 +1,78 @@
+.shop {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
+.shop .trending-header {
+    display: block;
+}
+
+.shop .trending-header .dash {
+    width: 1rem;
+    border-bottom: 2px solid black;
+}
+
+.shop .product-items {
+    margin-bottom: 2rem;
+}
+.shop .product-item{
+    margin-top: 2rem;
+}
+.shop .product-item .img-wrapper {
+    display: block;
+    height: 300px;
+    width: auto;
+    overflow: hidden;
+    position: relative;
+}
+
+.shop .product-item .img-wrapper .steady-image {
+    width: 100%;
+}
+
+.shop .product-item .img-wrapper .hover-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.shop .product-item .img-wrapper img {
+    transition: all linear 0.3s;
+}
+
+.shop .product-item .img-wrapper:hover img {
+    opacity: 0;
+}
+
+.shop .product-item .img-wrapper:hover .hover-image {
+    opacity: 1;
+}
+
+.shop .product-item .info-wrapper {
+    position: relative;
+    padding-top: 1rem;
+}
+
+.shop .product-item a {
+    color: black;
+}
+
+.shop .product-item .info-wrapper h4 a {
+    float: left;
+}
+
+.shop .product-item .info-wrapper>a {
+    position: absolute;
+    right: 0;
+    font-size: 1rem;
+    vertical-align: middle;
+}
+
+.shop .product-item .info-wrapper .clear {
+    clear: both;
+}
+
+.shop .product-item>a {
+    display: block;
+}

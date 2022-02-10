@@ -1,0 +1,123 @@
+<div class="container">
+    <form class="row header-wrapper" action="#">
+        <div class="col-md-7 cart-header">
+            <h1>CART</h1>
+            <h5>YOU'VE GOT 2 ITEMS IN THE CART</h5>
+        </div>
+        <div class="col-md-5 coupon">
+            <a (click)="toggleBtn()" class="btn-coupon" *ngIf="isShow">
+                <img class="img-coupon"
+                    src="https://themes.laborator.co/aurum/fashion/wp-content/themes/aurum/assets/images/coupon.svg"
+                    alt="">
+                <p class="coupon-txt">
+                    <span>ENTER COUPON</span>
+                    <span>TO GET DISCOUNTS</span>
+                    <span style="clear: both;"></span>
+                </p>
+            </a>
+
+            <div class="input-coupon" *ngIf="!isShow">
+                <a class="btn-close" (click)="toggleBtn()">x</a>
+                <input type="text" class="form-control" placeholder="Coupon code">
+                <button class="btn">Apply coupon</button>
+            </div>
+        </div>
+        <table class="table items">
+            <thead>
+                <tr>
+                    <th scope="col"></th>
+                    <th scope="col">PRODUCT</th>
+                    <th scope="col">QUANTITY</th>
+                    <th scope="col">SUBTOTAL</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="item" *ngFor="let item of items$ | async">
+                    <th scope="row">
+                        <img class="item-image"
+                            src="{{item.product.img}}"
+                            alt="">
+                    </th>
+                    <td>
+                        <h5>{{item.product.name}}</h5>
+                        <p>{{item.product.price}}</p>
+                    </td>
+                    <td>
+                        <p>
+                            <span class="quantity-wrapper">
+                                <button type="button" class="btn btn-quantity" (click)="minusItem(item.product.id)">
+                                    <i class="fas fa-minus"></i>
+                                </button>
+                                <input type="text" class="form-control input-quantity" value="{{item.quantity}}">
+                                <button type="button" class="btn btn-quantity" (click)="plusItem(item.product.id)">
+                                    <i class="fas fa-plus"></i>
+                                </button>
+                            </span>
+                        </p>
+                    </td>
+                    <td>
+                        <h5>{{item.totalUnitPrice}}</h5>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="checkout-wrapper">
+            <div class="checkout">
+                <h5>CART TOTALS</h5>
+                <table class="table">
+                    <tbody>
+                        <tr>
+                            <th scope="row">
+                                <h6>SUBTOTAL</h6>
+                            </th>
+                            <td>
+                                <p>£0.00</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">
+                                <h6>SHIPPING</h6>
+                            </th>
+                            <td>
+                                <p>FLAT RATE: £0.00</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">
+                                <h6>VAT</h6>
+                            </th>
+                            <td>
+                                <p>£0.00</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">
+                                <h6>TOTAL</h6>
+                            </th>
+                            <td>
+                                <p>{{cartPrice$ | async}}</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="btn-cart">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <a href="#" type="submit" class="btn btn-primary update-cart">Update cart</a>
+                        </div>
+                        <div class="col-md-6">
+                            <a href="#" type="submit" class="btn btn-primary checkout">Checkout</a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3"></div>
+                        <div class="col-md-6">
+                            <a href="#" type="submit" class="btn btn-primary calculate-shipping">Calculate shipping</a>
+                        </div>
+                        <div class="col-md-3"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
