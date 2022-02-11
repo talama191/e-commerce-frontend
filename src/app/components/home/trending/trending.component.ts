@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 
 @Component({
@@ -8,7 +9,7 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
 })
 export class TrendingComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router:Router) { }
 
   ngOnInit(): void {
   }
@@ -21,5 +22,9 @@ export class TrendingComponent implements OnInit {
     navSpeed: 700,
     items: 4,
     autoplay: true
+  }
+
+  productDetail(){
+    this.router.navigate(['detail'])
   }
 }
