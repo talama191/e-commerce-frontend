@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { CartPageComponent } from './cart-page/cart-page.component';
 import { MainLayoutComponent } from '../layout/main-layout/main-layout.component';
 import { AuthGuard } from 'src/app/auth.guard';
+import { CartItemComponent } from './cart-item/cart-item.component';
 
 const routes: Routes = [
   {
@@ -10,7 +11,7 @@ const routes: Routes = [
     component: MainLayoutComponent,
     canActivate: [AuthGuard],
     children: [
-      {path: '', component: CartPageComponent}
+      {path: '', component: CartItemComponent}
     ]
   }
 ]

@@ -1,3 +1,11 @@
+<!-- <table>
+    <tr *ngFor = "let p of products">
+        <td>{{p.id}}</td>
+        <td>{{p.name}}</td>
+        <td> <img src="{{p.img1}}" alt=""></td>
+    </tr>
+</table> -->
+
 <section class="aifai-trending container">
     <div class="row trending-header">
         <h2>TRENDING</h2>
@@ -5,24 +13,24 @@
         <p class="dash"></p>
     </div>
     <owl-carousel-o [options]="trendingOptions">
-        <ng-template carouselSlide>
+        <ng-template carouselSlide *ngFor = "let p of products, let i =index" >
             <div class="item">
                 <div class="product-item">
                     <a href="#" class="img-wrapper">
-                        <img class="steady-image" src="../../assets/img/trending/cap1.jpg" alt="">
-                        <img class="hover-image" src="../../assets/img/trending/cap2.jpg" alt="">
+                        <img class="steady-image" src="{{p.img1}}" alt="">
+                        <img class="hover-image" src="{{p.img2}}" alt="">
                     </a>
                     <div class="info-wrapper">
-                        <h4><a href="/detail">CHEAP MONDAY</a></h4>
+                        <h4><a href="/detail">{{p.name}}</a></h4>
                         <a href="#"><i class="fas fa-plus"></i></a>
                         <div class="clear"></div>
                     </div>
-                    <a href="#">MEN</a>
-                    <span><s>$50</s> $20</span>
+                    <a href="#">{{p.category.name}}</a>
+                    <span><s>$50</s> {{p.price}}</span>
                 </div>
             </div>
         </ng-template>
-        <ng-template carouselSlide>
+        <!-- <ng-template carouselSlide>
             <div class="item" >
                 <div class="product-item">
                     <a href="#" class="img-wrapper">
@@ -123,7 +131,7 @@
                     <span><s>$50</s> $20</span>
                 </div>
             </div>
-        </ng-template>
+        </ng-template> -->
     </owl-carousel-o>
 </section>
 
