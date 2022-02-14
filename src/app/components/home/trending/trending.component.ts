@@ -45,7 +45,7 @@ export class TrendingComponent implements OnInit {
       })
    }
  
-  productDetail(){
-    this.router.navigate(['detail'])
+  productDetail(id:number){
+    this.router.navigate(['product',id])
   }
 }

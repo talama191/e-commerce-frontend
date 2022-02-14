@@ -2,16 +2,16 @@
 <section class="container aifai-detail">
     <div class="row">
         <div class="col-md-1 mini-images">
-            <img src="../../assets/img/product/bag/center.jpg" alt="">
+            <img src="{{pro.img2}}" alt="">
             <img src="../../assets/img/product/bag/close.jpg" alt="">
             <img src="../../assets/img/product/bag/edge.jpg" alt="">
             <img src="../../assets/img/product/bag/man.jpg" alt="">
         </div>
         <div class="col-md-5 product-slide">
-            <img src="{{product.img}}" alt="">
+            <img src="{{pro.img1}}" alt="">
         </div>
         <div class="col-md-6 product-detail">
-            <h1 class="product-title">{{product.name}}</h1>
+            <h1 class="product-title">{{pro.name}}</h1>
             <a class="category-title" href="#"><span> </span></a>
             <p class="rating">
                 <i class="fas fa-star"></i>
@@ -26,7 +26,7 @@
             </p>
 
             <p class="price">
-                <span>VND {{product.price}} </span>
+                <span>VND {{pro.price}} </span>
                 <s>VND 500000</s>
             </p>
 
@@ -54,9 +54,9 @@
                 </a>
             </p>
             <div class="small-info">
-                <p>PRODUCT ID: <span>{{product.id}}</span></p>
+                <p>PRODUCT ID: <span>{{pro.id}}</span></p>
                 <p>SKU: <span>123</span></p>
-                <p>CATEGORY: <span>BAGS</span></p>
+                <p>CATEGORY: <span>{{pro.category.name}}</span></p>
             </div>
         </div>
     </div>

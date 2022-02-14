@@ -1,6 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Product } from 'src/app/models/product';
 import { CartService } from 'src/app/services/cart.service';
+import { ProductService } from 'src/app/services/product.service';
 
 @Component({
   selector: 'app-product-detail',
@@ -13,11 +15,20 @@ export class ProductDetailComponent implements OnInit {
   isShowRate = false;
 
   @Input() product: any;
-
-  constructor(private cartService: CartService) {
+  id:number;
+  pro:Product;
+  constructor(private cartService: CartService
+             ,private activatedRoute: ActivatedRoute
+            ,private productService:ProductService
+            ,private route: ActivatedRoute,private router: Router) {
   }
 
   ngOnInit(): void {
+   
+    this.id = this.route.snapshot.params['id'];
+    this.productService.getById(this.id).subscribe(data=>{
+      this.pro = data;
+    })
   }
 
   addToCart(product: Product) {

@@ -21,8 +21,8 @@
                         <img class="hover-image" src="{{p.img2}}" alt="">
                     </a>
                     <div class="info-wrapper">
-                        <h4><a href="/detail">{{p.name}}</a></h4>
-                        <a href="#"><i class="fas fa-plus"></i></a>
+                        <h4><a (click)="productDetail(p.id)">{{p.name}}</a></h4>
+                        <a ><i class="fas fa-plus"></i></a>
                         <div class="clear"></div>
                     </div>
                     <a href="#">{{p.category.name}}</a>
