@@ -9,8 +9,8 @@ import { CartService } from 'src/app/services/cart.service';
 export class CartItemComponent implements OnInit {
   isShow = true;
 
-  items$ = this.cartService.items$;
-  cartPrice$ = this.cartService.cartPrice$;
+  // items$ = this.cartService.items$;
+  // cartPrice$ = this.cartService.cartPrice$;
 
   constructor(private cartService: CartService) {
   }
@@ -21,10 +21,10 @@ export class CartItemComponent implements OnInit {
   toggleBtn() {
     this.isShow = !this.isShow;
   }
-  minusItem(id: number) {
-    this.cartService.minusCart(id);
-  }
-  plusItem(id: number) {
-    this.cartService.plusCart(id);
-  }
+  // minusItem(id: number) {
+  //   this.cartService.minusCart(id);
+  // }
+  // plusItem(id: number) {
+  //   this.cartService.plusCart(id);
+  // }
 }

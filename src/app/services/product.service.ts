@@ -19,7 +19,16 @@ export class ProductService {
     return this.httpClient.get(`${this.baseUrl}/${id}`)
   }
 
-  // search(keyword:String): Observable<any>{
-  //   return this.httpClient.get(`${this.baseUrl}`,keyword)
-  // }
+  getPagable(request:any): Observable<any>{
+    const params = request;
+    return this.httpClient.get(`${this.baseUrl}/pagination`,{params})
+  }
+
+  search(keyword:String): Observable<any>{
+    return this.httpClient.get(`${this.baseUrl}/search?keyword=${keyword}`)
+  }
+
+  findByCategory(categoryName:String): Observable<any>{
+    return this.httpClient.get(`${this.baseUrl}/getByCategory/${categoryName}`)
+  }
 }

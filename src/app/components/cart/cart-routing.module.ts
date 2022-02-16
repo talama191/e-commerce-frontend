@@ -9,7 +9,7 @@ const routes: Routes = [
   {
     path: 'cart',
     component: MainLayoutComponent,
-    canActivate: [AuthGuard],
+    // canActivate: [AuthGuard],
     children: [
       {path: '', component: CartItemComponent}
     ]

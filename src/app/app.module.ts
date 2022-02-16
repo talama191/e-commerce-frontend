@@ -15,13 +15,18 @@ import { ProductModule } from './components/product/product.module';
 import { ShopModule } from './components/shop/shop.module';
 import { LoginModule } from './components/login/login.module';
 import { Interceptor } from './intercepter/interceptor';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ShopCategoryComponent } from './components/shop/shopCategory/shop-category.component';
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ShopCategoryComponent,
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     CarouselModule,
     AppRoutingModule,
     BrowserAnimationsModule,
@@ -32,7 +37,9 @@ import { Interceptor } from './intercepter/interceptor';
     LoginRoutingModule,
     ProductModule,
     ShopModule,
-    LoginModule
+    LoginModule,
+    ReactiveFormsModule
+   
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: Interceptor, multi: true}

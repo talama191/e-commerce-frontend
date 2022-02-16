@@ -2,7 +2,9 @@
     margin-top: 3rem;
     margin-bottom: 3rem;
 }
-
+h2{
+    text-transform: uppercase;
+}
 .shop .trending-header {
     display: block;
 }
@@ -99,11 +101,4 @@
 #revert img:hover{
     width: 55px;
     height: 55px;
-}
-form{
-    position: absolute;
-    right: 0;
-}
-form button:hover{
-    cursor: pointer;
 }

@@ -41,7 +41,7 @@ export class TrendingComponent implements OnInit {
    loadCategories(){
       this.categoryService.findAll().subscribe(data =>{
           this.categories = data
-          console.log("data" + data.name)
+      
       })
    }
  

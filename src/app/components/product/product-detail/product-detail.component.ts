@@ -26,14 +26,15 @@ export class ProductDetailComponent implements OnInit {
   ngOnInit(): void {
    
     this.id = this.route.snapshot.params['id'];
+    console.log( "id " + this.id)
     this.productService.getById(this.id).subscribe(data=>{
       this.pro = data;
     })
   }
 
-  addToCart(product: Product) {
-    this.cartService.addToCart(product)
-  }
+  // addToCart(product: Product) {
+  //   this.cartService.addToCart(product)
+  // }
 
   openDesc() {
     this.isShowDesc = true;

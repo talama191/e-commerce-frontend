@@ -7,6 +7,7 @@ import { FooterComponent } from './footer/footer.component';
 import { CartComponent } from './navigation/cart/cart.component';
 import { MenuComponent } from './navigation/menu/menu.component';
 import { SearchBarComponent } from './navigation/search-bar/search-bar.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -15,10 +16,13 @@ import { SearchBarComponent } from './navigation/search-bar/search-bar.component
     MainLayoutComponent,
     CartComponent,
     MenuComponent,
-    SearchBarComponent
+    SearchBarComponent,
+    
   ],
   imports: [
     CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
     RouterModule.forChild([])
   ],
   exports: [MainLayoutComponent]

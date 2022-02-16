@@ -1,4 +1,5 @@
 import { Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
+import { CartLineForm } from 'src/app/models/cart-line-form';
 import { CartService } from 'src/app/services/cart.service';
 
 @Component({
@@ -8,10 +9,11 @@ import { CartService } from 'src/app/services/cart.service';
 })
 export class CartComponent implements OnInit {
   isShowCart = false;
-
-  items$ = this.cartService.items$;
-  cartQuantity$ = this.cartService.cartQuantity$;
-  cartPrice$ = this.cartService.cartPrice$;
+  cartLineForm:CartLineForm
+  // items$ = 1
+  // cartQuantity$ = 1
+  // cartPrice$ = 1
+  quantity:number
 
   @ViewChild('cartBtn') cartBtn: ElementRef | undefined;
   @ViewChild('cartItems') cartItems: ElementRef | undefined;
@@ -24,5 +26,13 @@ export class CartComponent implements OnInit {
     })
   }
   ngOnInit(): void {
+    this.cartLineForm = new CartLineForm();
+    this.cartService.viewCart(2).subscribe(data =>{
+        this.quantity = Object.keys(data).length
+    })
+  }
+
+  addToCart(cartId:number){
+    // this.cartService.addToCart(cartId)
   }
 }

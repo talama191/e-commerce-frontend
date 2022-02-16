@@ -1,23 +1,45 @@
 
+
 <div class="shop container">
     <div class="row trending-header">
         <h2>SHOP</h2>
         <p>SHOWING 1- 16 OF 45 RESULTS</p>
         <p class="dash"></p>
+
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
+              Sorting 
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" (click)="sortProduct('id')" >Defaut</a>
+              <a class="dropdown-item" (click)="sortProduct('name')" >Sort By Name</a>
+              <a class="dropdown-item" (click)="sortProduct('price')">Sort By Price</a>
+              <a class="dropdown-item" (click)="sortProduct('category')">Sort By Category</a>
+            </div>
+          </div>
+          <div id="revert" (click)="revert()">
+          <img src="../../../assets/img/aarrow.png" alt="" >
+         </div> 
     </div>
     <div class="row product-items">
         <div *ngFor="let product of products" class="col-md-3 product-item">
             <a href="/product/{{product.id}}" class="img-wrapper">
-                <img class="steady-image" src="{{product.img}}" alt="">
-                <img class="hover-image" src="../../assets/img/trending/cap2.jpg" alt="">
+                <img class="steady-image" src="{{product.img1}}" alt="">
+                <img class="hover-image" src="{{product.img2}}" alt="">
             </a>
             <div class="info-wrapper">
-                <h4><a href="/product/{{product.id}}">{{product.name}}</a></h4>
-                <a href="#"><i class="fas fa-plus"></i></a>
+                <h5><a href="/product/{{product.id}}">{{product.name}}</a></h5>
+               
+            <form [formGroup]="nameForm" >
+                <input type="number" value="2" formControlName="productId"  />
+                <input type="number" value="1"  formControlName="quantity" />
+                  <button  type="submit"  style="background: none;border: none;"><i class="fas fa-plus"></i></button>
+            </form>
                 <div class="clear"></div>
             </div>
-            <a href="#">{{product.categoryD}}</a>
-            <span><s>$50</s> ${{product.price}}</span>
+            <a id="" href="shop/category/đồ cổ">{{product.category.name}}</a>
+            <span><s>£50</s> £{{product.price}}.00</span>
+
         </div>
     </div>
 </div>
