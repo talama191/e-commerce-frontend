@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { CartLineForm } from 'src/app/models/cart-line-form';
 import { Product } from 'src/app/models/product';
+import { CartService } from 'src/app/services/cart.service';
 import { ProductService } from 'src/app/services/product.service';
 
 @Component({
@@ -17,9 +19,12 @@ export class ShopCategoryComponent implements OnInit {
     totalElements: number = 0;
     direction:String = "asc";
     keyword:String;
-  constructor(private productService:ProductService,private route:ActivatedRoute) { }
+    cartId: number;
+    cartLineForm: CartLineForm;
+  constructor(private productService:ProductService,private route:ActivatedRoute,private router:Router,private cartService:CartService) { }
 
   ngOnInit(): void {
+    this.cartId = Number(localStorage.getItem("userId") as string)
     this.category = this.route.snapshot.params['category'];
     this.productService.findByCategory(this.category).subscribe(data =>{
       this.products = data
@@ -49,6 +54,20 @@ revert(){
     this.getRequestParam({page: 0, sortBy: this.sortBy, direction: this.direction});
   }
 
+}
+
+
+addToCart(productId: number) {
+  // this mean user haven't login yet
+  if (this.cartId == 0) {
+    this.router.navigate(['login'])
+  } else {
+    this.cartLineForm = new CartLineForm(productId, 1);
+    this.cartService.addToCart(this.cartId, this.cartLineForm).subscribe(data => {
+      console.log(data)
+      alert("added to cart")
+    })
+  }
 }
 
 }

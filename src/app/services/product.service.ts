@@ -14,6 +14,9 @@ export class ProductService {
   getProduct(): Observable<any>{
     return this.httpClient.get(`${this.baseUrl}/viewList`)
   }
+  gettrending():Observable<any>{
+    return this.httpClient.get(`${this.baseUrl}/trending`)
+  }
 
   getById(id:number): Observable<any>{
     return this.httpClient.get(`${this.baseUrl}/${id}`)

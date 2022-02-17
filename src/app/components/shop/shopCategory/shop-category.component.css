@@ -102,3 +102,15 @@ h2{
     width: 55px;
     height: 55px;
 }
+
+button{
+    border: none;
+    background: none;
+    position: absolute;
+    right: 0;
+}
+button:hover{
+    cursor: pointer;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}

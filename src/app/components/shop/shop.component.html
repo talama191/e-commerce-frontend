@@ -6,8 +6,8 @@
         <p>SHOWING 1- 16 OF 45 RESULTS</p>
         <p class="dash"></p>
 
-        <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown">
               Sorting 
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -17,6 +17,9 @@
               <a class="dropdown-item" (click)="sortProduct('category')">Sort By Category</a>
             </div>
           </div>
+       
+
+
           <div id="revert" (click)="revert()">
           <img src="../../../assets/img/aarrow.png" alt="" >
          </div> 
@@ -30,14 +33,11 @@
             <div class="info-wrapper">
                 <h5><a href="/product/{{product.id}}">{{product.name}}</a></h5>
                
-            <form [formGroup]="nameForm" >
-                <input type="number" value="2" formControlName="productId"  />
-                <input type="number" value="1"  formControlName="quantity" />
-                  <button  type="submit"  style="background: none;border: none;"><i class="fas fa-plus"></i></button>
-            </form>
+                  <button (click)="addToCart(product.id)"><i class="fas fa-plus"></i></button>
+
                 <div class="clear"></div>
             </div>
-            <a id="" href="shop/category/đồ cổ">{{product.category.name}}</a>
+            <a id="" href="shop/category/{{product.category.name}}">{{product.category.name}}</a>
             <span><s>£50</s> £{{product.price}}.00</span>
 
         </div>

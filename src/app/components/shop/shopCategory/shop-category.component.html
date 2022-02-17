@@ -13,7 +13,7 @@
             </a>
             <div class="info-wrapper">
                 <h5><a href="/product/{{product.id}}">{{product.name}}</a></h5>
-                <a href="#"><i class="fas fa-plus"></i></a>
+                <button (click)="addToCart(product.id)"><i class="fas fa-plus"></i></button>
                 <div class="clear"></div>
             </div>
             <a id="" href="shop/category/{{product.category.name}}">{{product.category.name}}</a>

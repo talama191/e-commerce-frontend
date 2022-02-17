@@ -20,14 +20,27 @@
       </form>
     </div>
     <div class="col-md-6  register-form">
-      <form action="#">
+      <form  (ngSubmit)="registration()" #form="ngForm" >
         <h2>REGISTER</h2>
+        <h3>{{registerMessage}}</h3>
         <div class="form-group">
-          <input type="text" class="form-control username" id="exampleInputEmail1" aria-describedby="emailHelp"
+          <input [(ngModel)]="user.username" name="username" type="text" class="form-control username" id="exampleInputEmail1" aria-describedby="emailHelp"
             placeholder="Username or email address *">
         </div>
         <div class="form-group">
-          <input type="password" class="form-control password" id="exampleInputPassword1" placeholder="Password *">
+          <input [(ngModel)]="user.password"  name="password"  type="password" class="form-control password" id="exampleInputPassword1" placeholder="Password *">
+        </div>
+        <div class="form-group">
+          <input [(ngModel)]="user.fullname"  name="fullname"  type="text" class="form-control password" id="exampleInputPassword1" placeholder="fullname *">
+        </div>
+        <div class="form-group">
+          <input [(ngModel)]="user.phoneNumber" name="phoneNumber"  type="text" class="form-control password" id="exampleInputPassword1" placeholder="phoneNumber *">
+        </div>
+        <div class="form-group">
+          <input [(ngModel)]="user.email"  name="email" type="email" class="form-control password" id="exampleInputPassword1" placeholder="email *">
+        </div>
+        <div class="form-group">
+          <input [(ngModel)]="user.address"  name="address" type="text" class="form-control password" id="exampleInputPassword1" placeholder="address *">
         </div>
         <button type="submit" class="btn">Register</button>
       </form>

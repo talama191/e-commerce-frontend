@@ -1,10 +1,26 @@
 <section class="row header-wrapper">
-        <header class="container">
-            <a class="logo-wrapper" href="/home"><img class="logo" src="../../assets/img/logo/logo@2x.png" alt=""></a>
-            <app-menu></app-menu>
-            <div class="aifai-utility">
-                <app-search-bar></app-search-bar>
-                <app-cart></app-cart>
+    <header class="container">
+        <a class="logo-wrapper" href="/home"><img class="logo" src="../../assets/img/logo/logo@2x.png" alt=""></a>
+        <app-menu></app-menu>
+        <div class="aifai-utility">
+            <app-search-bar></app-search-bar>
+            <app-cart></app-cart>
+            <div [ngClass]="{'disable':isLoggedIn==true}">
+            <a id="login" href="login">Login</a>
             </div>
-        </header>
+        </div>
+
+
+         <div [ngClass]="{'disable':isLoggedIn==false}">
+         <div class="dropdown" >
+            <button class="nut_dropdown"> <img src="../../../../../assets/img/user.png" alt=""></button>
+            <div class="noidung_dropdown">
+              <a href="#">Your profie</a>
+              <a href="#">Change Password</a>
+              <hr>
+              <a (click)="logout()">Logout</a>
+            </div>
+          </div>
+        </div>
+    </header>
 </section>

@@ -104,6 +104,14 @@ form{
     position: absolute;
     right: 0;
 }
-form button:hover{
+.product-items button{
+    border: none;
+    background: none;
+    position: absolute;
+    right: 0;
+}
+.product-items button:hover{
     cursor: pointer;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
 }

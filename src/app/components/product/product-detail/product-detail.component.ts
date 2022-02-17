@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { CartLineForm } from 'src/app/models/cart-line-form';
 import { Product } from 'src/app/models/product';
 import { CartService } from 'src/app/services/cart.service';
 import { ProductService } from 'src/app/services/product.service';
@@ -13,7 +14,8 @@ export class ProductDetailComponent implements OnInit {
   isShowDesc = true;
   isShowInfo = false;
   isShowRate = false;
-
+  cartLineForm:CartLineForm
+  cartId:number
   @Input() product: any;
   id:number;
   pro:Product;
@@ -24,17 +26,13 @@ export class ProductDetailComponent implements OnInit {
   }
 
   ngOnInit(): void {
-   
+    this.cartId = Number(localStorage.getItem("userId") as string)
     this.id = this.route.snapshot.params['id'];
     console.log( "id " + this.id)
     this.productService.getById(this.id).subscribe(data=>{
       this.pro = data;
     })
   }
-
-  // addToCart(product: Product) {
-  //   this.cartService.addToCart(product)
-  // }
 
   openDesc() {
     this.isShowDesc = true;
@@ -52,6 +50,20 @@ export class ProductDetailComponent implements OnInit {
     this.isShowDesc = false;
     this.isShowInfo = false;
     this.isShowRate = true;
+  }
+
+
+  addToCart(productId:number){
+    // this mean user haven't login yet
+       if(this.cartId == 0){
+            this.router.navigate(['login'])
+       }else{
+        this.cartLineForm = new CartLineForm(productId,1);
+        this.cartService.addToCart(this.cartId,this.cartLineForm).subscribe(data =>{
+          console.log(data)
+          alert("added to cart")
+        })
+       }
   }
 
 }

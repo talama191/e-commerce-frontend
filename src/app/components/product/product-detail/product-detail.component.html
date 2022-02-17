@@ -2,10 +2,10 @@
 <section class="container aifai-detail">
     <div class="row">
         <div class="col-md-1 mini-images">
+            <img src="{{pro.img1}}" alt="">
             <img src="{{pro.img2}}" alt="">
-            <img src="../../assets/img/product/bag/close.jpg" alt="">
-            <img src="../../assets/img/product/bag/edge.jpg" alt="">
-            <img src="../../assets/img/product/bag/man.jpg" alt="">
+            <img src="{{pro.img3}}" alt="">
+            <img src="{{pro.img4}}" alt="">
         </div>
         <div class="col-md-5 product-slide">
             <img src="{{pro.img1}}" alt="">
@@ -26,11 +26,11 @@
             </p>
 
             <p class="price">
-                <span>VND {{pro.price}} </span>
-                <s>VND 500000</s>
+                <span>£{{pro.price}}.00 </span>
+                <s>£50.00</s>
             </p>
 
-            <form class="form-quantity" action="#">
+          
                 <p>
                     <span class="quantity-wrapper">
                         <button class="btn btn-quantity">
@@ -40,12 +40,13 @@
                         <button class="btn btn-quantity">
                             <i class="fas fa-plus"></i>
                         </button>
-                        <button type="button" class="add-cart-btn btn">
+                        <button  (click)="addToCart(pro.id)" class="add-cart-btn btn">
                             <i class="fas fa-plus"></i><span>ADD TO CART</span>
                         </button>
                     </span>
+               
                 </p>
-            </form>
+   
 
             <p class="btn-wishlist">
                 <a href="#" class="btn btn-primary">

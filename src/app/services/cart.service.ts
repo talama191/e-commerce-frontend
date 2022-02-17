@@ -25,5 +25,17 @@ export class CartService {
     return this.httpClient.post(`${this.baseUrl}/add/${cartId}`,form)
   }
 
+  plusItemQuantity(productId:number,cartId:number):Observable<any>{
+    return this.httpClient.put(`${this.baseUrl}/plus?productId=${productId}&cartId=${cartId}`,null)
+  }
+  minusItemQuantity(productId:number,cartId:number):Observable<any>{
+    return this.httpClient.put(`${this.baseUrl}/minus?productId=${productId}&cartId=${cartId}`,null)
+  }
+
+
+   getTotal(cartId:number):Observable<any>{
+     return this.httpClient.get(`${this.baseUrl}/getTotal?cartId=${cartId}`)
+   }
+
     
 }

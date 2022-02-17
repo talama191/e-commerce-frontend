@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CartLineForm } from 'src/app/models/cart-line-form';
 import { Product } from 'src/app/models/product';
 import { CartService } from 'src/app/services/cart.service';
@@ -23,25 +23,20 @@ export class ShopComponent implements OnInit {
   direction:String = "asc";
   keyword:String;
   cartLineForm:CartLineForm
-  public nameForm:FormGroup;
+  cartId:number
+
   constructor(private httpServer: HttpServerService,
               private productService:ProductService,
               private route:ActivatedRoute,
               private cartService:CartService,
-              private formBuilder: FormBuilder) { 
-
-                this.nameForm = this.formBuilder.group({
-                  productId: '',
-                  quantity: ''
-                });
-              }
+              private router:Router,
+              private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
-    this.cartLineForm = new CartLineForm();
     this.keyword = this.route.snapshot.params['keyword'];
         // this.getRequestParam({page: 0, sortBy: this.sortBy});
+        this.cartId = Number(localStorage.getItem("userId") as string)
         this.productService.search(this.keyword).subscribe(data =>{
-          console.log("search data : " + data)
           if(data ==""){
             this.getRequestParam({page: 0, sortBy: this.sortBy});
           }else{
@@ -75,18 +70,18 @@ export class ShopComponent implements OnInit {
   }
 
 
-  addToCart(){
+  addToCart(productId:number){
+    // this mean user haven't login yet
+       if(this.cartId == 0){
+            this.router.navigate(['login'])
+       }else{
+        this.cartLineForm = new CartLineForm(productId,1);
+        this.cartService.addToCart(this.cartId,this.cartLineForm).subscribe(data =>{
+          console.log(data)
+          alert("added to cart")
+        })
+       }
+  }
+   
   
-      this.cartService.addToCart(2,this.cartLineForm).subscribe(data=>{
-        console.log("item:" + data)
-      })
-  }
-
-
-  onSubmit(){
-    // this.addToCart()
-    const a = this.nameForm.get('productId')?.value
-    console.log(a)
-    alert("added item to cart")
-  }
 }

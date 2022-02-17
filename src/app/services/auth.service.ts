@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { JwtHelperService } from '@auth0/angular-jwt';
-import { throwError } from 'rxjs';
+import { Observable, throwError } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 import { User } from '../models/user';
 
@@ -32,10 +32,11 @@ export class AuthService {
       localStorage.setItem('authToken', this.authToken);
      console.log(data.userDetails.authorities[0].authority)
       localStorage.setItem('role', data.userDetails.authorities[0].authority)
-       
+      localStorage.setItem('userId', data.userDetails.id)
       this.router.navigate(['/'])
     }, error => {
-      console.log(error);
+         this.router.navigate(["login"])
+         alert("wrong username or password")
     }
     );
   }
@@ -50,6 +51,7 @@ export class AuthService {
   logout() {
     localStorage.removeItem('authToken');
     localStorage.removeItem('role');
+    localStorage.removeItem('userId');
     console.log("logout!")
   }
 
@@ -63,5 +65,9 @@ export class AuthService {
       return "no-role";
     }
      
+  }
+
+  register(user:User):Observable<any>{
+    return this.http.post(`${this.REST_URL}/api/auth/signup`,user)
   }
 }
