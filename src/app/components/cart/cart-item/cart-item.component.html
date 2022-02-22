@@ -34,9 +34,7 @@
             <tbody>
                 <tr class="item" *ngFor="let item of carts">
                     <th scope="row">
-                        <img class="item-image"
-                            src="{{item.product.img1}}"
-                            alt="">
+                        <img class="item-image" src="{{item.product.img1}}" alt="">
                     </th>
                     <td>
                         <h5>{{item.product.name}}</h5>
@@ -48,7 +46,8 @@
                                 <button type="button" class="btn btn-quantity" (click)="minusItem(item.product.id)">
                                     <i class="fas fa-minus"></i>
                                 </button>
-                                <input type="text" class="form-control input-quantity" value="{{item.quantity}}" disabled>
+                                <input type="text" class="form-control input-quantity" value="{{item.quantity}}"
+                                    disabled>
                                 <button type="button" class="btn btn-quantity" (click)="plusItem(item.product.id)">
                                     <i class="fas fa-plus"></i>
                                 </button>
@@ -104,10 +103,10 @@
                 <div class="btn-cart">
                     <div class="row">
                         <div class="col-md-6">
-                            <a href="#" type="submit" class="btn btn-primary update-cart">Update cart</a>
+                            <a href="shop" type="submit" class="btn btn-primary update-cart">Update cart</a>
                         </div>
                         <div class="col-md-6">
-                            <a href="#" type="submit" class="btn btn-primary checkout">Checkout</a>
+                            <button type="button" class="btn btn-primary checkout" (click)="pay()">Checkout</button>
                         </div>
                     </div>
                     <div class="row">
@@ -121,4 +120,5 @@
             </div>
         </div>
     </form>
+
 </div>

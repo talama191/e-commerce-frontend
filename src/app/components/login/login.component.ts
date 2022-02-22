@@ -27,7 +27,7 @@ export class LoginComponent implements OnInit {
   registration(){
     this.authService.register(this.user).subscribe(data=>{
       console.log("success")
-           this.registerMessage = "success"
+           this.registerMessage = "success !!"
     }, error =>{
       console.log(error)
         this.registerMessage = error.error.message

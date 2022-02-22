@@ -37,6 +37,11 @@ export class CartComponent implements OnInit {
 
   }
   viewCart(){
-   this.router.navigate(['cart'])
+    if(this.cartId==0){
+      this.router.navigate(['login']);
+    }else{
+      this.router.navigate(['cart'])
+    }
+
   }
 }
