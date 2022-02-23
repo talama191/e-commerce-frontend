@@ -17,6 +17,7 @@ import { LoginModule } from './components/login/login.module';
 import { Interceptor } from './intercepter/interceptor';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ShopCategoryComponent } from './components/shop/shopCategory/shop-category.component';
+import { UserProfileModule } from './components/user-profile/user-profile.module';
 
 
 @NgModule({
@@ -38,6 +39,7 @@ import { ShopCategoryComponent } from './components/shop/shopCategory/shop-categ
     ProductModule,
     ShopModule,
     LoginModule,
+    UserProfileModule,
     ReactiveFormsModule
    
   ],
