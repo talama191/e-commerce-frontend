@@ -6,13 +6,10 @@ import { ShopComponent } from './components/shop/shop.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
-<<<<<<< HEAD
-=======
   // {path: 'login', component:LoginComponent},
   // {path:'detail', component:ProductDetailComponent,pathMatch: 'full'},
   // {path:'shop',component:ShopComponent}
   
->>>>>>> 942a6f758fb01383b7d46400109d34b31ea7d8fa
 ]
 
 @NgModule({

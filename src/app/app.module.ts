@@ -16,14 +16,9 @@ import { ProductModule } from './components/product/product.module';
 import { ShopModule } from './components/shop/shop.module';
 import { LoginModule } from './components/login/login.module';
 import { Interceptor } from './intercepter/interceptor';
-<<<<<<< HEAD
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import {MatIconModule} from '@angular/material/icon'
-=======
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ShopCategoryComponent } from './components/shop/shopCategory/shop-category.component';
 import { UserProfileModule } from './components/user-profile/user-profile.module';
->>>>>>> 942a6f758fb01383b7d46400109d34b31ea7d8fa
 
 
 @NgModule({
@@ -46,14 +41,9 @@ import { UserProfileModule } from './components/user-profile/user-profile.module
     ProductModule,
     ShopModule,
     LoginModule,
-<<<<<<< HEAD
-    FontAwesomeModule,
-    MatIconModule
-=======
     UserProfileModule,
     ReactiveFormsModule
    
->>>>>>> 942a6f758fb01383b7d46400109d34b31ea7d8fa
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: Interceptor, multi: true}
