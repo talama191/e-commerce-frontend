@@ -3,14 +3,16 @@ import { Injectable } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { JwtHelperService } from '@auth0/angular-jwt';
-import { throwError } from 'rxjs';
+import { Observable, throwError } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
+import { User } from '../models/user';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
   authToken: string = '';
+  currentUser:User;
 
   private httpOptions = {
     headers: new HttpHeaders({
@@ -25,11 +27,16 @@ export class AuthService {
   login(form: NgForm) {
     const url = `${this.REST_URL}/api/auth/login`;
     return this.http.post<any>(url, form.value, this.httpOptions).subscribe(data => {
+      console.log(data)
       this.authToken = data.tokenType + ' ' + data.jwt;
       localStorage.setItem('authToken', this.authToken);
+     console.log(data.userDetails.authorities[0].authority)
+      localStorage.setItem('role', data.userDetails.authorities[0].authority)
+      localStorage.setItem('userId', data.userDetails.id)
       this.router.navigate(['/'])
     }, error => {
-      console.log(error);
+         this.router.navigate(["login"])
+         alert("wrong username or password")
     }
     );
   }
@@ -43,14 +50,24 @@ export class AuthService {
 
   logout() {
     localStorage.removeItem('authToken');
+    localStorage.removeItem('role');
+    localStorage.removeItem('userId');
     console.log("logout!")
   }
 
  
   
-  getRole(authToken: any): string{
-    const helper = new JwtHelperService();
-    const decodedToken = helper.decodeToken(authToken);
-    return decodedToken.roles[0].authority;
+  getRole(): string{
+    const role = localStorage.getItem('role')
+    if(role!=null){
+      return role;
+    }else{
+      return "no-role";
+    }
+     
+  }
+
+  register(user:User):Observable<any>{
+    return this.http.post(`${this.REST_URL}/api/auth/signup`,user)
   }
 }

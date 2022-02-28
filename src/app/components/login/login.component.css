@@ -46,3 +46,10 @@ h2 {
     box-shadow: none !important;
     background-color: none;
 }
+
+.success{
+    color: chartreuse;
+}
+.error{
+    color: red;
+}

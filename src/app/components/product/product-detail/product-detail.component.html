@@ -1,16 +1,17 @@
+
 <section class="container aifai-detail">
     <div class="row">
         <div class="col-md-1 mini-images">
-            <img src="../../assets/img/product/bag/center.jpg" alt="">
-            <img src="../../assets/img/product/bag/close.jpg" alt="">
-            <img src="../../assets/img/product/bag/edge.jpg" alt="">
-            <img src="../../assets/img/product/bag/man.jpg" alt="">
+            <img src="{{pro.img1}}" alt="">
+            <img src="{{pro.img2}}" alt="">
+            <img src="{{pro.img3}}" alt="">
+            <img src="{{pro.img4}}" alt="">
         </div>
         <div class="col-md-5 product-slide">
-            <img src="{{product.img}}" alt="">
+            <img src="{{pro.img1}}" alt="">
         </div>
         <div class="col-md-6 product-detail">
-            <h1 class="product-title">{{product.name}}</h1>
+            <h1 class="product-title">{{pro.name}}</h1>
             <a class="category-title" href="#"><span> </span></a>
             <p class="rating">
                 <i class="fas fa-star"></i>
@@ -25,11 +26,11 @@
             </p>
 
             <p class="price">
-                <span>VND {{product.price}} </span>
-                <s>VND 500000</s>
+                <span>£{{pro.price}}.00 </span>
+                <s>£50.00</s>
             </p>
 
-            <form class="form-quantity" action="#">
+          
                 <p>
                     <span class="quantity-wrapper">
                         <button class="btn btn-quantity">
@@ -39,12 +40,13 @@
                         <button class="btn btn-quantity">
                             <i class="fas fa-plus"></i>
                         </button>
-                        <button type="button" class="add-cart-btn btn" (click)="addToCart(product)">
+                        <button  (click)="addToCart(pro.id)" class="add-cart-btn btn">
                             <i class="fas fa-plus"></i><span>ADD TO CART</span>
                         </button>
                     </span>
+               
                 </p>
-            </form>
+   
 
             <p class="btn-wishlist">
                 <a href="#" class="btn btn-primary">
@@ -53,9 +55,9 @@
                 </a>
             </p>
             <div class="small-info">
-                <p>PRODUCT ID: <span>{{product.id}}</span></p>
+                <p>PRODUCT ID: <span>{{pro.id}}</span></p>
                 <p>SKU: <span>123</span></p>
-                <p>CATEGORY: <span>BAGS</span></p>
+                <p>CATEGORY: <span>{{pro.category.name}}</span></p>
             </div>
         </div>
     </div>
@@ -165,3 +167,5 @@
         </div>
     </div>
 </section>
+
+<app-related-product></app-related-product>

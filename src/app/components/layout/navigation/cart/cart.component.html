@@ -1,15 +1,15 @@
-<div class="icon-wrapper" (click)="isShowCart = !isShowCart">
+<div class="icon-wrapper" (click)="viewCart()" >
     <a class="cart-icon" type="button">
-        <span class="quantity">{{cartQuantity$ | async}}</span>
+        <span class="quantity">{{quantity}}</span>
         <i class="fas fa-shopping-cart" #cartBtn></i>
     </a>
 </div>
-<ul class="cart-items" *ngIf="isShowCart" #cartItems>
+<!-- <ul class="cart-items" *ngIf="isShowCart" #cartItems>
     <li *ngFor="let item of items$ | async" class="cart-item">
         <ul class="cart-content">
             <li class="cart-image">
                 <a class="thumbnail-wrapper" href="#">
-                    <img class="thumbnail" src="{{item.product.img}}" alt="">
+                    <img class="thumbnail" src="{{item.product.img1}}" alt="">
                 </a>
             </li>
             <li class="cart-info">
@@ -32,4 +32,4 @@
         </div>
         <p class="sub-total">SUBTOTAL: {{cartPrice$ | async}}<span></span></p>
     </div>
-</ul>
+</ul> -->

@@ -30,6 +30,7 @@
     "ngx-owl-carousel-o": "^6.0.0",
     "owl.carousel": "^2.3.4",
     "rxjs": "~6.6.0",
+    "stripe": "^8.203.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
   },

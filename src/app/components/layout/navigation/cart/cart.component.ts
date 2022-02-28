@@ -1,4 +1,6 @@
 import { Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
+import { CartLineForm } from 'src/app/models/cart-line-form';
 import { CartService } from 'src/app/services/cart.service';
 
 @Component({
@@ -8,15 +10,16 @@ import { CartService } from 'src/app/services/cart.service';
 })
 export class CartComponent implements OnInit {
   isShowCart = false;
-
-  items$ = this.cartService.items$;
-  cartQuantity$ = this.cartService.cartQuantity$;
-  cartPrice$ = this.cartService.cartPrice$;
-
+  cartLineForm:CartLineForm
+  // items$ = 1
+  // cartQuantity$ = 1
+  // cartPrice$ = 1
+  quantity:number
+  cartId:number
   @ViewChild('cartBtn') cartBtn: ElementRef | undefined;
   @ViewChild('cartItems') cartItems: ElementRef | undefined;
 
-  constructor(private renderer: Renderer2, private cartService: CartService) {
+  constructor(private renderer: Renderer2, private cartService: CartService,private router:Router) {
     this.renderer.listen('window', 'click', (e: Event) => {
       if (e.target !== this.cartBtn?.nativeElement && e.target !== this.cartItems?.nativeElement) {
         this.isShowCart = false;
@@ -24,5 +27,21 @@ export class CartComponent implements OnInit {
     })
   }
   ngOnInit(): void {
+    // this.cartLineForm = new CartLineForm();
+    this.cartId = Number(localStorage.getItem("userId") as string)
+    if(this.cartId!=0){
+      this.cartService.viewCart(this.cartId).subscribe(data =>{
+        this.quantity = Object.keys(data).length
+    })
+    }
+
+  }
+  viewCart(){
+    if(this.cartId==0){
+      this.router.navigate(['login']);
+    }else{
+      this.router.navigate(['cart'])
+    }
+
   }
 }

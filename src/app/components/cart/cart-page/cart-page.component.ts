@@ -8,7 +8,7 @@ import { CartService } from 'src/app/services/cart.service';
 })
 export class CartPageComponent implements OnInit {
 
-  items$ = this.cartService.items$;
+  // items$ = this.cartService.items$;
 
   constructor(private cartService: CartService) {
   }
@@ -16,10 +16,10 @@ export class CartPageComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  minusItem(id: number) {
-    this.cartService.minusCart(id);
-  }
-  plusItem(id: number) {
-    this.cartService.plusCart(id);
-  }
+  // minusItem(id: number) {
+  //   this.cartService.minusCart(id);
+  // }
+  // plusItem(id: number) {
+  //   this.cartService.plusCart(id);
+  // }
 }

@@ -68,3 +68,14 @@
 .aifai-trending .product-item>a {
     display: block;
 }
+button{
+    border: none;
+    background: none;
+    position: absolute;
+    right: 0;
+}
+button:hover{
+    cursor: pointer;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}

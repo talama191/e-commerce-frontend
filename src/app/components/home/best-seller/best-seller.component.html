@@ -5,122 +5,20 @@
         <p class="dash"></p>
     </div>
     <owl-carousel-o [options]="sellerOptions">
-        <ng-template carouselSlide>
-            <div class="item">
-                <div class="product-item">
-                    <a href="#" class="img-wrapper">
-                        <img class="steady-image" src="../../assets/img/trending/cap1.jpg" alt="">
-                        <img class="hover-image" src="../../assets/img/trending/cap2.jpg" alt="">
-                    </a>
-                    <div class="info-wrapper">
-                        <h4><a href="#">CHEAP MONDAY</a></h4>
-                        <a href="#"><i class="fas fa-plus"></i></a>
-                        <div class="clear"></div>
-                    </div>
-                    <a href="#">MEN</a>
-                    <span><s>$50</s> $20</span>
-                </div>
-            </div>
-        </ng-template>
-        <ng-template carouselSlide>
+        <ng-template carouselSlide *ngFor = "let p of products, let i =index">
             <div class="item" >
                 <div class="product-item">
-                    <a href="#" class="img-wrapper">
-                        <img class="steady-image" src="../../assets/img/trending/clock1.jpg" alt="">
-                        <img class="hover-image" src="../../assets/img/trending/clock2.jpg" alt="">
+                    <a href="product/{{p.id}}" class="img-wrapper">
+                        <img class="steady-image" src="{{p.img1}}" alt="">
+                        <img class="hover-image" src="{{p.img2}}" alt="">
                     </a>
                     <div class="info-wrapper">
-                        <h4><a href="#">CHEAP MONDAY</a></h4>
-                        <a href="#"><i class="fas fa-plus"></i></a>
+                        <h4><a href="product/{{p.id}}">{{p.name}}</a></h4>
+                        <button (click)="addToCart(p.id)"><i class="fas fa-plus"></i></button>
                         <div class="clear"></div>
                     </div>
-                    <a href="#">MEN</a>
-                    <span><s>$50</s> $20</span>
-                </div>
-            </div>
-        </ng-template>
-        <ng-template carouselSlide>
-            <div class="item" >
-                <div class="product-item">
-                    <a href="#" class="img-wrapper">
-                        <img class="steady-image" src="../../assets/img/trending/girl1.jpg" alt="">
-                        <img class="hover-image" src="../../assets/img/trending/girl2.jpg" alt="">
-                    </a>
-                    <div class="info-wrapper">
-                        <h4><a href="#">CHEAP MONDAY</a></h4>
-                        <a href="#"><i class="fas fa-plus"></i></a>
-                        <div class="clear"></div>
-                    </div>
-                    <a href="#">MEN</a>
-                    <span><s>$50</s> $20</span>
-                </div>
-            </div>
-        </ng-template>
-        <ng-template carouselSlide>
-            <div class="item" >
-                <div class="product-item">
-                    <a href="#" class="img-wrapper">
-                        <img class="steady-image" src="../../assets/img/trending/kinh1.jpg" alt="">
-                        <img class="hover-image" src="../../assets/img/trending/kinh2.jpg" alt="">
-                    </a>
-                    <div class="info-wrapper">
-                        <h4><a href="#">CHEAP MONDAY</a></h4>
-                        <a href="#"><i class="fas fa-plus"></i></a>
-                        <div class="clear"></div>
-                    </div>
-                    <a href="#">MEN</a>
-                    <span><s>$50</s> $20</span>
-                </div>
-            </div>
-        </ng-template>
-        <ng-template carouselSlide>
-            <div class="item" >
-                <div class="product-item">
-                    <a href="#" class="img-wrapper">
-                        <img class="steady-image" src="../../assets/img/trending/man1.jpg" alt="">
-                        <img class="hover-image" src="../../assets/img/trending/man2.jpg" alt="">
-                    </a>
-                    <div class="info-wrapper">
-                        <h4><a href="#">CHEAP MONDAY</a></h4>
-                        <a class="icon-plus" href="#"><i class="fas fa-plus"></i></a>
-                        <div class="clear"></div>
-                    </div>
-                    <a href="#">MEN</a>
-                    <span><s>$50</s> $20</span>
-                </div>
-            </div>
-        </ng-template>
-        <ng-template carouselSlide>
-            <div class="item" >
-                <div class="product-item">
-                    <a href="#" class="img-wrapper">
-                        <img class="steady-image" src="../../assets/img/trending/vong1.jpg" alt="">
-                        <img class="hover-image" src="../../assets/img/trending/vong2.jpg" alt="">
-                    </a>
-                    <div class="info-wrapper">
-                        <h4><a href="#">CHEAP MONDAY</a></h4>
-                        <a href="#"><i class="fas fa-plus"></i></a>
-                        <div class="clear"></div>
-                    </div>
-                    <a href="#">MEN</a>
-                    <span><s>$50</s> $20</span>
-                </div>
-            </div>
-        </ng-template>
-        <ng-template carouselSlide>
-            <div class="item" >
-                <div class="product-item">
-                    <a href="#" class="img-wrapper">
-                        <img class="steady-image" src="../../assets/img/trending/white1.jpg" alt="">
-                        <img class="hover-image" src="../../assets/img/trending/white2.jpg" alt="">
-                    </a>
-                    <div class="info-wrapper">
-                        <h4><a href="#">CHEAP MONDAY</a></h4>
-                        <a href="#"><i class="fas fa-plus"></i></a>
-                        <div class="clear"></div>
-                    </div>
-                    <a href="#">MEN</a>
-                    <span><s>$50</s> $20</span>
+                    <a href="shop/category/{{p.category.name}}">{{p.category.name}}</a>
+                    <span><s></s>  £{{p.price}}.00</span>
                 </div>
             </div>
         </ng-template>

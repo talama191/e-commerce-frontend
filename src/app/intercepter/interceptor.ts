@@ -14,7 +14,7 @@ export class Interceptor implements HttpInterceptor {
                 'Content-Type': 'application/json',
                 'Access-Control-Allow-Origin': '*',
                 'custom': `${authToken}`,
-                'Authorization': `${wso2AccessKey}`
+                'Authorization': `${authToken}`
             })
             const AuthRequest = req.clone({ headers: headers });
             return next.handle(AuthRequest);

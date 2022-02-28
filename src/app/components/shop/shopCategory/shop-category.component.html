@@ -1,0 +1,23 @@
+
+
+<div class="shop container">
+    <div class="row trending-header">
+        <h2>{{category}}</h2>
+
+    </div>
+    <div class="row product-items">
+        <div *ngFor="let product of products" class="col-md-3 product-item">
+            <a href="/product/{{product.id}}" class="img-wrapper">
+                <img class="steady-image" src="{{product.img1}}" alt="">
+                <img class="hover-image" src="{{product.img2}}" alt="">
+            </a>
+            <div class="info-wrapper">
+                <h5><a href="/product/{{product.id}}">{{product.name}}</a></h5>
+                <button (click)="addToCart(product.id)"><i class="fas fa-plus"></i></button>
+                <div class="clear"></div>
+            </div>
+            <a id="" href="shop/category/{{product.category.name}}">{{product.category.name}}</a>
+            <span><s>£50</s> £{{product.price}}.00</span>
+        </div>
+    </div>
+</div>

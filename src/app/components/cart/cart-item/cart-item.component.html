@@ -2,7 +2,7 @@
     <form class="row header-wrapper" action="#">
         <div class="col-md-7 cart-header">
             <h1>CART</h1>
-            <h5>YOU'VE GOT 2 ITEMS IN THE CART</h5>
+            <h5>YOU'VE GOT {{totalQuantity}} ITEMS IN THE CART</h5>
         </div>
         <div class="col-md-5 coupon">
             <a (click)="toggleBtn()" class="btn-coupon" *ngIf="isShow">
@@ -32,15 +32,13 @@
                 </tr>
             </thead>
             <tbody>
-                <tr class="item" *ngFor="let item of items$ | async">
+                <tr class="item" *ngFor="let item of carts">
                     <th scope="row">
-                        <img class="item-image"
-                            src="{{item.product.img}}"
-                            alt="">
+                        <img class="item-image" src="{{item.product.img1}}" alt="">
                     </th>
                     <td>
                         <h5>{{item.product.name}}</h5>
-                        <p>{{item.product.price}}</p>
+                        <p>£{{item.product.price}}.00</p>
                     </td>
                     <td>
                         <p>
@@ -48,7 +46,8 @@
                                 <button type="button" class="btn btn-quantity" (click)="minusItem(item.product.id)">
                                     <i class="fas fa-minus"></i>
                                 </button>
-                                <input type="text" class="form-control input-quantity" value="{{item.quantity}}">
+                                <input type="text" class="form-control input-quantity" value="{{item.quantity}}"
+                                    disabled>
                                 <button type="button" class="btn btn-quantity" (click)="plusItem(item.product.id)">
                                     <i class="fas fa-plus"></i>
                                 </button>
@@ -56,7 +55,8 @@
                         </p>
                     </td>
                     <td>
-                        <h5>{{item.totalUnitPrice}}</h5>
+                        <h5>total pricce</h5>
+                        <h5 style="margin-left: 20px;">£{{item.quantity * item.product.price}}.00</h5>
                     </td>
                 </tr>
             </tbody>
@@ -71,7 +71,7 @@
                                 <h6>SUBTOTAL</h6>
                             </th>
                             <td>
-                                <p>£0.00</p>
+                                <p>£{{totalPrice}}</p>
                             </td>
                         </tr>
                         <tr>
@@ -95,7 +95,7 @@
                                 <h6>TOTAL</h6>
                             </th>
                             <td>
-                                <p>{{cartPrice$ | async}}</p>
+                                <p>£{{totalPrice}}</p>
                             </td>
                         </tr>
                     </tbody>
@@ -103,10 +103,10 @@
                 <div class="btn-cart">
                     <div class="row">
                         <div class="col-md-6">
-                            <a href="#" type="submit" class="btn btn-primary update-cart">Update cart</a>
+                            <a href="shop" type="submit" class="btn btn-primary update-cart">Update cart</a>
                         </div>
                         <div class="col-md-6">
-                            <a href="#" type="submit" class="btn btn-primary checkout">Checkout</a>
+                            <button type="button" class="btn btn-primary checkout" (click)="pay()">Checkout</button>
                         </div>
                     </div>
                     <div class="row">
@@ -120,4 +120,5 @@
             </div>
         </div>
     </form>
+
 </div>
