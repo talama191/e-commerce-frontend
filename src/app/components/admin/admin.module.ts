@@ -18,6 +18,7 @@ import { AddVoucherComponent } from './add-voucher/add-voucher.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { AddCategoryComponent } from './add-category/add-category.component';
 import { EditCategoryComponent } from './edit-category/edit-category.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { EditCategoryComponent } from './edit-category/edit-category.component';
     AddVoucherComponent,
     CategoriesComponent,
     AddCategoryComponent,
-    EditCategoryComponent
+    EditCategoryComponent,
+    HeaderComponent
     
   ],
   imports: [
