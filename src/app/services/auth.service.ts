@@ -27,7 +27,6 @@ export class AuthService {
   login(form: NgForm) {
     const url = `${this.REST_URL}/api/auth/login`;
     return this.http.post<any>(url, form.value, this.httpOptions).subscribe(data => {
-      console.log(data)
       this.authToken = data.tokenType + ' ' + data.jwt;
       localStorage.setItem('authToken', this.authToken);
      console.log(data.userDetails.authorities[0].authority)

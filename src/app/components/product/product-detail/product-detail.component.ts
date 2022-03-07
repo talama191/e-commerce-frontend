@@ -91,11 +91,16 @@ export class ProductDetailComponent implements OnInit {
 
 
   comment(){
-    let content = this.nameForm.get('content')?.value
-   this.commentForm = new CommentForm(this.cartId,this.id,content);
-    this.commentService.addComment(this.commentForm).subscribe(data=>{
-      this.loadComment()
-    })
+    if(this.cartId==0){
+      this.router.navigate(['login'])
+    }else{
+      let content = this.nameForm.get('content')?.value
+      this.commentForm = new CommentForm(this.cartId,this.id,content);
+       this.commentService.addComment(this.commentForm).subscribe(data=>{
+         this.loadComment()
+       })
+    }
+
     
   } 
 

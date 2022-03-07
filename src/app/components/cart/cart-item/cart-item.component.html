@@ -15,11 +15,14 @@
                     <span style="clear: both;"></span>
                 </p>
             </a>
-
+            <p style="padding-left: 200px;">{{voucherMessage}}</p>
             <div class="input-coupon" *ngIf="!isShow">
                 <a class="btn-close" (click)="toggleBtn()">x</a>
-                <input type="text" class="form-control" placeholder="Coupon code">
-                <button class="btn">Apply coupon</button>
+                <form  [formGroup]="nameForm"  action="">
+                <input type="text" class="form-control" placeholder="Coupon code" formControlName="code">
+            
+                </form>
+                <button class="btn" [disabled]="disablebutton" (click)="applyCoupon()">Apply coupon</button>
             </div>
         </div>
         <table class="table items">
@@ -95,7 +98,7 @@
                                 <h6>TOTAL</h6>
                             </th>
                             <td>
-                                <p>£{{totalPrice}}</p>
+                                <p>£{{totalAfterdiscount}} ({{discountPercent}}% discount)</p>
                             </td>
                         </tr>
                     </tbody>
