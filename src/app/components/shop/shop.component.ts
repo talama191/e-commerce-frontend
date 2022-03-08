@@ -1,3 +1,4 @@
+import { HttpClient, HttpEventType, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -16,6 +17,7 @@ import { HttpServerService } from '../../services/http-server.service';
 
 export class ShopComponent implements OnInit {
   products: Product[];
+  product:Product
   // page:number =1;
   sortBy:String = "id";
   // direction:String = "asc";
@@ -24,13 +26,22 @@ export class ShopComponent implements OnInit {
   keyword:String;
   cartLineForm:CartLineForm
   cartId:number
+   
+  shortLink: string = "";
+    loading: boolean = false; // Flag variable
+    img1: File ; // Variable to store file
+    img2: File ;
+
+
+  public uploadForm: FormGroup;  
 
   constructor(private httpServer: HttpServerService,
               private productService:ProductService,
               private route:ActivatedRoute,
               private cartService:CartService,
               private router:Router,
-              private formBuilder: FormBuilder) { }
+              private formBuilder: FormBuilder,
+              private http:HttpClient) { }
 
   ngOnInit(): void {
     this.keyword = this.route.snapshot.params['keyword'];
@@ -43,6 +54,11 @@ export class ShopComponent implements OnInit {
             this.products = data
           }
         })
+
+
+        this.uploadForm = this.formBuilder.group({
+          content: ['']
+        });
   }
    
   getRequestParam(request:any){
@@ -82,6 +98,43 @@ export class ShopComponent implements OnInit {
         })
        }
   }
-   
-  
+
+
+  onChange(event:any) {
+    this.img1 = event.target.files[0];
 }
+onChange2(event:any) {
+  this.img2 = event.target.files[0];
+}
+
+// OnClick of button Upload
+onUpload() {
+
+    this.loading = !this.loading;
+    console.log(this.img1);
+    console.log(this.img2);
+    this.productService.uploadImage(this.img1).subscribe(data =>{
+    }, error =>{
+      console.log("path:" + error.error.text)
+      this.product.name = "name"
+      this.product.img1 = error.error.text
+    }
+      
+    )
+
+
+    
+}
+}                                                            
+//                                                                          ??
+//                                                                         ??
+//                  ????                                            ??    ??
+//                     ??                                         ??  ??
+//                   ??                                         ??      ??
+
+// ???     ???      ????       ??       ????????   ???    ???       ???        ?????      ??????
+// ???     ???   ???    ???    ??       ??         ???    ???     ??   ??      ???  ??  ??   ???
+// ???     ???   ???    ???    ??       ??         ???    ???   ??       ??    ???    ??     ???
+// ???????????   ???    ???    ??       ??         ??????????   ???????????    ???           ???
+// ???     ???   ???    ???    ??       ??         ???    ???   ??       ??    ???           ???
+// ???     ???      ????       ??       ????????   ???    ???   ??       ??    ???           ???

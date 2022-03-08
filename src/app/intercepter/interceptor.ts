@@ -12,11 +12,12 @@ export class Interceptor implements HttpInterceptor {
             const authToken = localStorage.getItem('authToken');
             const headers = new HttpHeaders({
                 'Content-Type': 'application/json',
+        
                 'Access-Control-Allow-Origin': '*',
                 'custom': `${authToken}`,
                 'Authorization': `${authToken}`
             })
-            const AuthRequest = req.clone({ headers: headers });
+            const AuthRequest = req.clone();
             return next.handle(AuthRequest);
         } else {
             return next.handle(req);

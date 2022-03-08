@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpRequest } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
@@ -34,4 +34,18 @@ export class ProductService {
   findByCategory(categoryName:String): Observable<any>{
     return this.httpClient.get(`${this.baseUrl}/getByCategory/${categoryName}`)
   }
+
+
+  uploadImage(img1: File):Observable<any>{
+    const formData: FormData = new FormData();
+    formData.append('file', img1,img1.name);
+  
+    let headers= new HttpHeaders();
+
+    headers.set('Content-Type', '');
+    headers.set('Accept', "multipart/form-data"); 
+
+    return this.httpClient.post( `http://localhost:8080/minio/upload/bucket/files`, formData);
+  }
+
 }
