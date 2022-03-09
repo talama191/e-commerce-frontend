@@ -95,13 +95,22 @@ export class ProductDetailComponent implements OnInit {
       this.router.navigate(['login'])
     }else{
       let content = this.nameForm.get('content')?.value
-      this.commentForm = new CommentForm(this.cartId,this.id,content);
+      this.commentForm = new CommentForm(this.cartId,this.id,content,4);
        this.commentService.addComment(this.commentForm).subscribe(data=>{
          this.loadComment()
        })
     }
 
     
-  } 
+  }
+  
+  counter(i: number) {
+    return new Array(i);
+}
+
+
+
+
+
 
 }

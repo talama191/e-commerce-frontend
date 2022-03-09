@@ -5,4 +5,5 @@ export class Comment {
     content:String
     product:Product
     user:User
+    rate:number
 }

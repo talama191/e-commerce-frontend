@@ -245,3 +245,17 @@
 .rate p {
     float: right;
 }
+#form-comment{
+    position: relative;
+}
+.btn-send{
+    position: absolute;
+    bottom: 20px;
+    right: 35%;
+    border: none;
+    cursor: pointer;
+    padding: 5px 15px;
+    border-radius: 0 10px 0 10px;
+}
+
+
