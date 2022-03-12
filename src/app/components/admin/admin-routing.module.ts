@@ -3,8 +3,6 @@ import { AuthGuard } from 'src/app/auth.guard'
 import { RouterModule, Routes } from '@angular/router'
 import { AdminComponent } from './admin/admin.component'
 import { OrdersComponent } from './orders/orders.component'
-import { AddOrderComponent } from './add-order/add-order.component'
-import { EditOrderComponent} from './edit-order/edit-order.component'
 import { ProductsComponent } from './products/products.component'
 import { AddProductComponent } from './add-product/add-product.component'
 import { EditProductComponent} from './edit-product/edit-product.component'
@@ -20,8 +18,6 @@ const routes: Routes = [
     children: [
       {path: '', component: AdminComponent},
       {path: 'order', component: OrdersComponent},
-      {path: 'order/add', component: AddOrderComponent},
-      {path: 'order/edit/:id', component: EditOrderComponent},
       {path: 'product', component: ProductsComponent},
       {path: 'product/add', component: AddProductComponent},
       {path: 'product/edit/:id', component: EditProductComponent},

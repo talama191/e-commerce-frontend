@@ -8,9 +8,7 @@ import { MatIconModule } from '@angular/material/icon'
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { OrdersComponent } from './orders/orders.component';
-import { AddOrderComponent } from './add-order/add-order.component';
 import { ProductsComponent } from './products/products.component';
-import { EditOrderComponent } from './edit-order/edit-order.component';
 import { AddProductComponent } from './add-product/add-product.component';
 import { EditProductComponent } from './edit-product/edit-product.component';
 import { VouchersComponent } from './vouchers/vouchers.component';
@@ -25,9 +23,7 @@ import { HeaderComponent } from './header/header.component';
     AdminComponent,
     SidenavComponent,
     OrdersComponent,
-    AddOrderComponent,
     ProductsComponent,
-    EditOrderComponent,
     AddProductComponent,
     EditProductComponent,
     VouchersComponent,
