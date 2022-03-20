@@ -25,21 +25,19 @@
             <thead>
               <tr>
                 <th>#</th>
-                <th>Header</th>
-                <th>Header</th>
-                <th>Header</th>
-                <th>Header</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Category</th>
               </tr>
             </thead>
-            <tbody>
+            <tbody *ngFor="let product of products">
               <tr>
-                <td>1,001</td>
-                <td>Lorem</td>
-                <td>ipsum</td>
-                <td>dolor</td>
-                <td>
-                    <button class="btn"><a href="admin/product/edit/1">Edit</a></button>
-                </td>
+                <td>{{product.id}}</td>
+                <td>{{ product.name }}</td>
+                <td>{{ product.short_description }}</td>
+                <td>{{ product.price }}</td>
+                <td>{{ product.category.name }}</td>
               </tr>
             </tbody>
           </table>
