@@ -4,7 +4,6 @@ import { AdminRoutingModule } from './admin-routing.module';
 import { AdminComponent } from './admin/admin.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { MatIconModule } from '@angular/material/icon'
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { OrdersComponent } from './orders/orders.component';
@@ -40,7 +39,6 @@ import { EditCategoryComponent } from './edit-category/edit-category.component';
     CommonModule,
     AdminRoutingModule,
     FontAwesomeModule,
-    MatIconModule,
     BrowserModule,
     BrowserAnimationsModule
   ]
