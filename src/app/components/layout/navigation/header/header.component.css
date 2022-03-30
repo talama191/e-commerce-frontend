@@ -3,6 +3,11 @@
     z-index: 10;
     border-bottom: 1px solid #f7f7f7;
 }
+section.row{
+    position: fixed;
+    top: 0;
+    width: 105%;
+}
 
 .header-wrapper .container {
     position: relative;
@@ -14,10 +19,16 @@ header {
     width: 100%;
 }
 
-.logo-wrapper{
+.logo-wrapper {
     display: flex;
     align-items: center;
+    transition: all .2s ease-in-out;
 }
+.logo-wrapper:hover{
+    background-color: #a1b9b7a2;
+    transform: scale(1.1);
+}
+
 
 .logo {
     height: 20px;
@@ -29,54 +40,73 @@ header {
     position: relative;
 }
 
-#login{
+#login {
     margin-left: 20px;
+    transition: all .2s ease-in-out;  
+}
+#login:hover {
+    font-size: 1.1rem;
 }
 
-.disable{
+.disable {
     display: none;
 }
 
 
 /* Nút Dropdown*/
-.nut_dropdown img{
+.nut_dropdown img {
     width: 30px;
     height: 30px;
 }
+
 .nut_dropdown {
     margin-top: 10px;
     background: none;
     width: 30px;
     height: 30px;
     border: none;
-  }
- /* Thiết lập vị trí cho thẻ div với class dropdown*/
-  .dropdown {
+}
+
+/* Thiết lập vị trí cho thẻ div với class dropdown*/
+.dropdown {
     position: relative;
     display: inline-block;
-  }
- /* Nội dung Dropdown */
-  .noidung_dropdown {
+}
+
+/* Nội dung Dropdown */
+.noidung_dropdown {
     /*Ẩn nội dung các đường dẫn*/
     display: none;
     position: absolute;
     background-color: #f1f1f1;
     min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
-  }
- /* Thiết kế style cho các đường dẫn trong Dropdown */
-  .noidung_dropdown a {
+}
+
+/* Thiết kế style cho các đường dẫn trong Dropdown */
+.noidung_dropdown a {
     color: black;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
-  }
-  
-  .nut_dropdown:hover,a{cursor: pointer;}
-  /* thay đổi màu background khi hover vào đường dẫn */
- .noidung_dropdown a:hover {background-color: #ddd;}
- /* hiển thị nội dung dropdown khi hover */
-  .dropdown:hover .noidung_dropdown {display: block;}
- /* Thay đổi màu background cho nút khi được hover */
-  .dropdown:hover .nut_dropdown {background-color: #00bfff;}
+}
+
+.nut_dropdown:hover, a {
+    cursor: pointer;
+}
+
+/* thay đổi màu background khi hover vào đường dẫn */
+.noidung_dropdown a:hover {
+    background-color: #ddd;
+}
+
+/* hiển thị nội dung dropdown khi hover */
+.dropdown:hover .noidung_dropdown {
+    display: block;
+}
+
+/* Thay đổi màu background cho nút khi được hover */
+.dropdown:hover .nut_dropdown {
+    background-color: #00bfff;
+}

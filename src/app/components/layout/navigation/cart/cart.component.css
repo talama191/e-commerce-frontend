@@ -27,8 +27,14 @@
 
 .fa-shopping-cart {
     font-size: 1.5rem;
+    
 }
-
+.icon-wrapper{
+    transition: all .2s ease-in-out;
+}
+.icon-wrapper:hover {
+    transform: scale(1.1);
+}
 .cart-items {
     position: absolute;
     top: 110%;

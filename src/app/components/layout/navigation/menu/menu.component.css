@@ -34,6 +34,39 @@
     visibility: visible;
 }
 
+.aifai-navbar>.home-nav {
+    transition: all .2s ease-in-out;
+}
+
+.aifai-navbar>.home-nav:hover {
+    background-color: #a1b9b7a2;
+}
+
+li.home-nav>a {
+    transition: all .2s ease-in-out;
+
+}
+
+li.home-nav>a:hover {
+    transform: scale(1.2);
+}
+
+.aifai-navbar>li {
+    transition: text .2s ease-in-out;
+}
+
+
+.aifai-navbar>li:hover {
+    background-color: #a1b9b7a2;
+    visibility: visible;
+}
+.aifai-navbar>li>a{
+    transition: all .2s ease-in-out;
+}
+.aifai-navbar>li>a:hover{
+    transform: scale(1.2);
+}
+
 .home-mega {
     position: absolute;
     width: 150px;
