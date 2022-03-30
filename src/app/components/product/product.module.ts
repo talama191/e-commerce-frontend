@@ -7,13 +7,16 @@ import { RelatedProductComponent } from './related-product/related-product.compo
 
 import { ProductRoutingModule } from './product-routing.module';
 import { CarouselModule } from 'ngx-owl-carousel-o';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [ProductPageComponent, ProductDetailComponent, RelatedProductComponent],
   imports: [
     CommonModule,
     ProductRoutingModule,
-    CarouselModule
+    CarouselModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class ProductModule { }

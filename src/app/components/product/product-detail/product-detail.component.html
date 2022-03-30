@@ -104,68 +104,39 @@
         </div>
         <div class="reviews" *ngIf="isShowRate">
             <h3 class="review-title">5 REVIEWS FOR ASAP BAG</h3>
-            <div class="review">
+            <div *ngFor="let comment of comments" class="review">
                 <div class="avatar">
                     <img src="	https://secure.gravatar.com/avatar/1edd7ca6c7b4a8177b4ed2bcd523f723?s=60&d=mm&r=g"
                         alt="">
                 </div>
+             
                 <div class="review-details">
-                    <p class="username">ROB</p>
-                    <p class="review-date">MARCH 5, 2015</p>
-                    <p class="review-comment">It is great!</p>
+                    <p class="username">{{comment.user.username}}</p>
+                    <p class="review-date">Today</p>
+                    <p class="review-comment">{{comment.content}}</p>
                 </div>
                 <div class="rate">
-                    <p class="rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
+                    <p class="rating" *ngFor="let in of counter(comment.rate) ;let i = index">
                         <i class="fas fa-star"></i>
                     </p>
                 </div>
+            
             </div>
-            <div class="review">
-                <div class="avatar">
-                    <img src="	https://secure.gravatar.com/avatar/1edd7ca6c7b4a8177b4ed2bcd523f723?s=60&d=mm&r=g"
-                        alt="">
-                </div>
-                <div class="review-details">
-                    <p class="username">ROB</p>
-                    <p class="review-date">MARCH 5, 2015</p>
-                    <p class="review-comment">It is great!</p>
-                </div>
-                <div class="rate">
-                    <p class="rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </p>
-                </div>
+
+            <div id="form-comment" style="margin-top: 20px;">
+               <form  [formGroup]="nameForm"  action="">
+                    <textarea name="" placeholder="write some comment" id="textArea" cols="100" rows="5" formControlName="content"></textarea>
+
+                    <button class="btn-primary btn-send" (click)="comment()">send</button>
+                </form>
             </div>
-            <div class="review">
-                <div class="avatar">
-                    <img src="	https://secure.gravatar.com/avatar/1edd7ca6c7b4a8177b4ed2bcd523f723?s=60&d=mm&r=g"
-                        alt="">
-                </div>
-                <div class="review-details">
-                    <p class="username">ROB</p>
-                    <p class="review-date">MARCH 5, 2015</p>
-                    <p class="review-comment">It is great!</p>
-                </div>
-                <div class="rate">
-                    <p class="rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </p>
-                </div>
-            </div>
+
+
+              
+     
         </div>
     </div>
 </section>
 
 <app-related-product></app-related-product>
+

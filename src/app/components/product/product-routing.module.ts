@@ -3,6 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { ProductPageComponent } from './product-page/product-page.component';
 import { MainLayoutComponent } from '../layout/main-layout/main-layout.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
+import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 const routes: Routes = [
   {
@@ -17,7 +19,10 @@ const routes: Routes = [
 @NgModule({
   declarations: [],
   imports: [
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    FormsModule,
+    CommonModule
+
   ],
   exports: [RouterModule]
 })

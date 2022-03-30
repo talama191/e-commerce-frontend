@@ -8,6 +8,7 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
 import { AppRoutingModule } from './app-routing.module';
 import { LayoutModule } from './components/layout/layout.module';
 
+import { AdminModule } from './components/admin/admin.module'
 import { CartModule } from './components/cart/cart.module';
 import { HomeModule } from './components/home/home.module';
 import { LoginRoutingModule } from './components/login/login-routing.module';
@@ -33,6 +34,7 @@ import { ShopCategoryComponent } from './components/shop/shopCategory/shop-categ
     HttpClientModule,
     LayoutModule,
     CartModule,
+    AdminModule,
     HomeModule,
     LoginRoutingModule,
     ProductModule,

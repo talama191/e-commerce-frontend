@@ -1,12 +1,14 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, Input, OnInit } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Cart } from 'src/app/models/cart';
 import { CartLine } from 'src/app/models/cart-line';
 import { PaymentInfo } from 'src/app/models/payment-info';
+import { Voucher } from 'src/app/models/voucher';
 import { CartService } from 'src/app/services/cart.service';
 import { CheckoutService } from 'src/app/services/checkout.service';
+import { VoucherService } from 'src/app/services/voucher.service';
 import { environment } from 'src/environments/environment';
 
 
@@ -24,6 +26,8 @@ export class CartItemComponent implements OnInit {
    totalPrice:number
    stripe = Stripe("pk_test_51KVtIKJvWHPiWlgY8CWPvc5APqYOgNXAvBKleIE3LKNh4UoEktd6bU1EjS4CcasThiVNxNduwPbF3Otx0FTTydcv00ZDwtNFxS")
   
+   voucher:Voucher
+
    checkoutFormGroup: FormGroup;
 
    paymentInfo: PaymentInfo;
@@ -31,13 +35,26 @@ export class CartItemComponent implements OnInit {
    cardElements: any
 
    cardError:any
+   
+   public nameForm:FormGroup;
 
+   voucherMessage:String
+   
+   disablebutton:boolean;
 
+   totalAfterdiscount:number
+
+   discountPercent:number = 0
 
   // items$ = this.cartService.items$;
   // cartPrice$ = this.cartService.cartPrice$;
 
-  constructor(private cartService: CartService,private router:Router,private checkoutService:CheckoutService,private http: HttpClient) {  
+  constructor(private cartService: CartService,
+              private router:Router,
+              private checkoutService:CheckoutService,
+              private http: HttpClient,
+              private voucherService:VoucherService,
+              private formBuilder: FormBuilder) {  
 
   }
    cartId:number
@@ -46,6 +63,10 @@ export class CartItemComponent implements OnInit {
     this.cartId = Number(localStorage.getItem("userId") as string)
     this.loadCartLine();
     this.getTotal();
+    this.disablebutton = false
+    this.nameForm = this.formBuilder.group({
+      code: ''
+    });
 
   }
 
@@ -58,24 +79,36 @@ export class CartItemComponent implements OnInit {
 
   toggleBtn() {
     this.isShow = !this.isShow;
+
   }
   minusItem(productId: number) {
      this.cartService.minusItemQuantity(productId,this.cartId).subscribe(data =>{
        this.loadCartLine();
        this.getTotal();
      })
+     if(this.voucherMessage != null){
+      this.disablebutton = false
+      this.voucherMessage = " re-apply the voucher for discount"
+      this.discountPercent =0
+    }
   }
   plusItem(productId: number) {
     this.cartService.plusItemQuantity(productId,this.cartId).subscribe(data =>{
       this.loadCartLine();
       this.getTotal();
     })
- 
+    if(this.voucherMessage != null){
+      this.disablebutton = false
+      this.discountPercent =0 
+      this.voucherMessage = " re-apply the voucher for discount"
+    }
+
   }
 
   getTotal(){
     this.cartService.getTotal(this.cartId).subscribe(data=>{
       this.totalPrice = data
+      this.totalAfterdiscount = this.totalPrice;
     })
   }
 
@@ -89,7 +122,7 @@ export class CartItemComponent implements OnInit {
       name: 'credit-card',
       currency: 'GBP',
       // amount on cents *10 => to be on dollar
-      amount: this.totalPrice*100,
+      amount: this.totalAfterdiscount*100,
       quantity: '1',
       cancelUrl: 'http://localhost:4200/cart',
       successUrl: 'http://localhost:4200/cart',
@@ -108,4 +141,23 @@ export class CartItemComponent implements OnInit {
     });
 }
   
+
+applyCoupon(){
+  let code = this.nameForm.get('code')?.value
+
+  this.voucherService.getVoucerByCode(code).subscribe(data=>{
+   
+    if(data==null){
+      this.voucherMessage = "Invalid coupon"
+    }else{
+      this.voucher = data
+      this.disablebutton = true
+      this.voucherMessage = "you get " + this.voucher.discountPercent + "% discount" 
+      this.totalAfterdiscount = this.totalPrice - (this.totalPrice * this.voucher.discountPercent )/100
+      this.discountPercent = this.voucher.discountPercent
+    }
+  })
+
+}
+
 }
