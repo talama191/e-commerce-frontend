@@ -35,6 +35,24 @@ export class ProductService {
     return this.httpClient.get(`${this.baseUrl}/getByCategory/${categoryName}`)
   }
 
+  addProduct(name:String, 
+    price:number,
+    shortDescription:String,
+    longDescription:String, 
+    categoryName:String, 
+    img1: File, 
+    img2:File ):Observable<any>{
+    const formData: FormData = new FormData();
+    formData.append('file', img1,img1.name);
+    formData.append('file', img2,img2.name);
+
+    let headers= new HttpHeaders();
+
+    headers.set('Content-Type', '');
+    headers.set('Accept', "multipart/form-data"); 
+
+    return this.httpClient.post( `${this.baseUrl}/add?name=${name}&price=${price}&shortDescription=${shortDescription}&longDescription=${longDescription}&categoryName=${categoryName}`, formData);
+    }
 
   uploadImage(img1: File):Observable<any>{
     const formData: FormData = new FormData();
