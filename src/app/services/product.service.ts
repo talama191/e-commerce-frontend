@@ -35,7 +35,8 @@ export class ProductService {
     return this.httpClient.get(`${this.baseUrl}/getByCategory/${categoryName}`)
   }
 
-  addProduct(name:String, 
+  addProduct(
+    name:String, 
     price:number,
     shortDescription:String,
     longDescription:String, 

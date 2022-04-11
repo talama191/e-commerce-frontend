@@ -1,4 +1,3 @@
-
 <section class="container">
   <h1>MY ACCOUNT</h1>
   <h5>MANAGE YOUR ACCOUNT AND SEE YOUR ORDERS</h5>
@@ -7,44 +6,108 @@
       <form #f="ngForm" (ngSubmit)="login(f)">
         <h2>LOGIN</h2>
         <div class="form-group">
-          <input type="text" class="form-control username" name="usernameOrEmail" ngModel required #usernameOrEmail="ngModel" placeholder="Username or email address *">
+          <input
+            type="text"
+            class="form-control username"
+            name="usernameOrEmail"
+            ngModel
+            required
+            #usernameOrEmail="ngModel"
+            placeholder="Username or email address *"
+          />
         </div>
         <div class="form-group">
-          <input type="password" class="form-control password" name="password" ngModel required #password="ngModel" placeholder="Password *">
+          <input
+            type="password"
+            class="form-control password"
+            name="password"
+            ngModel
+            required
+            #password="ngModel"
+            placeholder="Password *"
+          />
         </div>
         <div class="form-group form-check">
-          <input type="checkbox" class="form-check-input" id="exampleCheck1">
-          <label class="form-check-label" for="exampleCheck1">Remember me</label>
+          <input type="checkbox" class="form-check-input" id="exampleCheck1" />
+          <label class="form-check-label" for="exampleCheck1"
+            >Remember me</label
+          >
         </div>
         <button [disabled]="f.invalid" type="submit" class="btn">Login</button>
       </form>
     </div>
-    <div class="col-md-6  register-form">
-      <form  (ngSubmit)="registration()" #form="ngForm" >
+    <div class="col-md-6 register-form">
+      <form (ngSubmit)="registration()" #form="ngForm">
         <h2>REGISTER</h2>
-        <h3 [ngClass]="{'error': registerMessage != 'success !!'}"  [ngClass]="{'sucess': registerMessage == 'success !!'}" >{{registerMessage}}</h3>
+        <h3
+          [ngClass]="{ error: registerMessage != 'success !!' }"
+          [ngClass]="{ sucess: registerMessage == 'success !!' }"
+        >
+          {{ registerMessage }}
+        </h3>
         <div class="form-group">
-          <input [(ngModel)]="user.username" name="username" type="text" class="form-control username" id="exampleInputEmail1" aria-describedby="emailHelp"
-            placeholder="Username *">
+          <input
+            [(ngModel)]="user.username"
+            name="username"
+            type="text"
+            class="form-control username"
+            id="exampleInputEmail1"
+            aria-describedby="emailHelp"
+            placeholder="Username *"
+          />
         </div>
         <div class="form-group">
-          <input [(ngModel)]="user.password"  name="password"  type="password" class="form-control password" id="exampleInputPassword1" placeholder="Password *">
+          <input
+            [(ngModel)]="user.password"
+            name="password"
+            type="password"
+            class="form-control password"
+            id="exampleInputPassword1"
+            placeholder="Password *"
+          />
         </div>
         <div class="form-group">
-          <input [(ngModel)]="user.fullname"  name="fullname"  type="text" class="form-control password" id="exampleInputPassword1" placeholder="fullname *">
+          <input
+            [(ngModel)]="user.fullname"
+            name="fullname"
+            type="text"
+            class="form-control password"
+            id="exampleInputPassword1"
+            placeholder="fullname *"
+          />
         </div>
         <div class="form-group">
-          <input [(ngModel)]="user.phoneNumber" name="phoneNumber"  type="text" class="form-control password" id="exampleInputPassword1" placeholder="phoneNumber *">
+          <input
+            [(ngModel)]="user.phoneNumber"
+            name="phoneNumber"
+            type="text"
+            class="form-control password"
+            id="exampleInputPassword1"
+            placeholder="phoneNumber *"
+          />
         </div>
         <div class="form-group">
-          <input [(ngModel)]="user.email"  name="email" type="email" class="form-control password" id="exampleInputPassword1" placeholder="email *">
+          <input
+            [(ngModel)]="user.email"
+            name="email"
+            type="email"
+            class="form-control password"
+            id="exampleInputPassword1"
+            placeholder="email *"
+          />
         </div>
         <div class="form-group">
-          <input [(ngModel)]="user.address"  name="address" type="text" class="form-control password" id="exampleInputPassword1" placeholder="address *">
+          <input
+            [(ngModel)]="user.address"
+            name="address"
+            type="text"
+            class="form-control password"
+            id="exampleInputPassword1"
+            placeholder="address *"
+          />
         </div>
         <button type="submit" class="btn">Register</button>
       </form>
     </div>
   </div>
-
 </section>

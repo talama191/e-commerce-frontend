@@ -1,37 +1,113 @@
 <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
-    <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Company name</a>
-    <div>
-      <button class="btn pb-0 mr-2">Notification</button>
-      <button class="btn pb-0 mr-2">Chat</button>
-      <a class="text-danger" href="#">Sign out</a>
-    </div>
-  </nav>
-<div class="container-fluid">
-    <div class="row">
-      <app-sidenav></app-sidenav>
-      <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
-          <div>
-              <button class="btn btn-primary" type="button">
-                <a href="admin/product" class="text-light">Back</a>
-              </button>
-          </div>
-        <form>
-            <div class="form-group">
-              <label for="exampleInputEmail1">Email address</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-              <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-            </div>
-            <div class="form-group">
-              <label for="exampleInputPassword1">Password</label>
-              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-            </div>
-            <div class="form-check">
-              <input type="checkbox" class="form-check-input" id="exampleCheck1">
-              <label class="form-check-label" for="exampleCheck1">Check me out</label>
-            </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-          </form>
-  
-      </main>
-    </div>
+  <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Company name</a>
+  <div>
+    <button class="btn pb-0 mr-2">Notification</button>
+    <button class="btn pb-0 mr-2">Chat</button>
+    <a class="text-danger" href="#">Sign out</a>
   </div>
+</nav>
+<div class="container-fluid">
+  <div class="row">
+    <app-sidenav></app-sidenav>
+    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+      <div>
+        <button class="btn btn-primary" type="button">
+          <a href="admin/product" class="text-light">Back</a>
+        </button>
+      </div>
+      <form #f="ngForm" (ngSubmit)="addProduct(f)">
+        <div class="form-group">
+          <label for="exampleInputEmail1">ProductName</label>
+          <input
+            type="email"
+            name="name"
+            ngModel
+            #name="ngModel"
+            class="form-control"
+            id="exampleInputEmail1"
+            aria-describedby="emailHelp"
+            placeholder="Enter product name"
+          />
+          <!-- <small id="emailHelp" class="form-text text-muted"
+            >We'll never share your email with anyone else.</small
+          > -->
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Price</label>
+          <input
+            type="number"
+            name="price"
+            ngModel
+            #price="ngModel"
+            class="form-control"
+            id="exampleInputPassword1"
+            placeholder="Enter price"
+          />
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Short Description</label>
+          <input
+            type="text"
+            name="shortDescription"
+            ngModel
+            #shortDescription="ngModel"
+            class="form-control"
+            id="exampleInputPassword1"
+            placeholder="Enter short description"
+          />
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Long description</label>
+          <input
+            type="text"
+            name="longDescription"
+            ngModel
+            #longDescription="ngModel"
+            class="form-control"
+            id="exampleInputPassword1"
+            placeholder="Enter long description"
+          />
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Category</label>
+          <input
+            type="text"
+            name="category"
+            ngModel
+            #category="ngModel"
+            class="form-control"
+            id="exampleInputPassword1"
+            placeholder="Enter category"
+          />
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Image 1</label>
+          <input
+            type="file"
+            name="image1"
+            (change)="selectFile1($event)"
+            class="form-control"
+            id="exampleInputPassword1"
+          />
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Image 2</label>
+          <input
+            type="file"
+            name="image2"
+            (change)="selectFile2($event)"
+            class="form-control"
+            id="exampleInputPassword1"
+          />
+        </div>
+        <!-- <div class="form-check">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1" />
+          <label class="form-check-label" for="exampleCheck1"
+            >Check me out</label
+          >
+        </div> -->
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </main>
+  </div>
+</div>

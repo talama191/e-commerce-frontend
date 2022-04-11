@@ -17,6 +17,7 @@ import { AddVoucherComponent } from './add-voucher/add-voucher.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { AddCategoryComponent } from './add-category/add-category.component';
 import { EditCategoryComponent } from './edit-category/edit-category.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { EditCategoryComponent } from './edit-category/edit-category.component';
   ],
   imports: [
     CommonModule,
+    FormsModule,
     AdminRoutingModule,
     FontAwesomeModule,
     BrowserModule,
