@@ -1,0 +1,9 @@
+<section class="row header-wrapper container">
+    <div class="cont">
+        <button [ngClass]="{ 'disappear':isDisappearing===true,'hide':isShowing===false, 'show-button' : isStartingAnimation===true}"
+            class="btn"><span [ngClass]="{'hide':isShowing===false, 'show-span' : isStartingAnimation===true}">{{message}}</span>
+            <img [ngClass]="{'disappear':isDisappearing===true,'hide':isShowing===false, 'show-image' : isStartingAnimation===true}" src="https://i.cloudup.com/2ZAX3hVsBE-3000x3000.png" height="62" width="62"></button>
+
+
+    </div>
+</section>

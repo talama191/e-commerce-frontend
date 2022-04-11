@@ -98,6 +98,7 @@ export class ProductDetailComponent implements OnInit{
       this.cartLineForm = new CartLineForm(productId, this.total);
       this.cartService.addToCart(this.cartId, this.cartLineForm).subscribe(data => {
         this.cartService.cartComponentInstance.updateCartIcon();
+        this.total=0;
       })
     }
   }

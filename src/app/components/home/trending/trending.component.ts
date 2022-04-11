@@ -6,6 +6,7 @@ import { Category } from 'src/app/models/category';
 import { Product } from 'src/app/models/product';
 import { CartService } from 'src/app/services/cart.service';
 import { CategoryService } from 'src/app/services/category.service';
+import { NotificationService } from 'src/app/services/notification.service';
 import { ProductService } from 'src/app/services/product.service';
 
 @Component({
@@ -19,7 +20,7 @@ export class TrendingComponent implements OnInit {
   CategoriOfProduct: String[];
   cartLineForm: CartLineForm
   cartId: number
-  constructor(private router: Router, private productService: ProductService, private categoryService: CategoryService, private cartService: CartService) { }
+  constructor(private router: Router,private notificationService:NotificationService, private productService: ProductService, private categoryService: CategoryService, private cartService: CartService) { }
 
   ngOnInit(): void {
     this.cartId = Number(localStorage.getItem("userId") as string)
@@ -64,6 +65,7 @@ export class TrendingComponent implements OnInit {
       this.cartLineForm = new CartLineForm(productId, 1);
       this.cartService.addToCart(this.cartId, this.cartLineForm).subscribe(data => {
         this.cartService.cartComponentInstance.updateCartIcon();
+        this.notificationService.notificationInstance.showNotification("Added to cart");
       })
     }
     

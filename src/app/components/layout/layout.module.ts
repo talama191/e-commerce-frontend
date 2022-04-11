@@ -8,6 +8,7 @@ import { CartComponent } from './navigation/cart/cart.component';
 import { MenuComponent } from './navigation/menu/menu.component';
 import { SearchBarComponent } from './navigation/search-bar/search-bar.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NotificationComponent } from './notification/notification.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     CartComponent,
     MenuComponent,
     SearchBarComponent,
-    
+    NotificationComponent
   ],
   imports: [
     CommonModule,
