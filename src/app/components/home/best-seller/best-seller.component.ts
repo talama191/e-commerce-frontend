@@ -44,8 +44,7 @@ export class BestSellerComponent implements OnInit {
     } else {
       this.cartLineForm = new CartLineForm(productId, 1);
       this.cartService.addToCart(this.cartId, this.cartLineForm).subscribe(data => {
-        console.log(data)
-        alert("added to cart")
+        this.cartService.cartComponentInstance.updateCartIcon();
       })
     }
   }

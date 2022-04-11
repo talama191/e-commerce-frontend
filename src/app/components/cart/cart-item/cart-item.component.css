@@ -1,5 +1,10 @@
 /* HEADER */
 
+
+.container{
+    margin-top: 5rem;
+}
+
 .header-wrapper {
     margin-top: 2rem;
 }
@@ -57,6 +62,16 @@
     right: 0;
     display: flex;
     height: 2rem;
+}
+img.btn-close{
+    width: 1.7rem;
+    height: 1.7rem;
+    opacity: 70%;
+}
+img.btn-close:hover{
+    width: 2rem;
+    height: 2rem;
+    opacity: 100%;
 }
 
 .input-coupon .btn-close {

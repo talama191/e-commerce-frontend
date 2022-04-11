@@ -1,4 +1,3 @@
-
 <section class="container aifai-detail">
     <div class="row">
         <div class="col-md-1 mini-images">
@@ -22,7 +21,7 @@
                 <span><a href="#">(5 customer reviews)</a></span>
             </p>
             <p class="short-description">
-                 
+
             </p>
 
             <p class="price">
@@ -30,23 +29,23 @@
                 <s>£50.00</s>
             </p>
 
-          
-                <p>
-                    <span class="quantity-wrapper">
-                        <button class="btn btn-quantity">
-                            <i class="fas fa-minus"></i>
-                        </button>
-                        <input type="text" class="form-control input-quantity">
-                        <button class="btn btn-quantity">
-                            <i class="fas fa-plus"></i>
-                        </button>
-                        <button  (click)="addToCart(pro.id)" class="add-cart-btn btn">
-                            <i class="fas fa-plus"></i><span>ADD TO CART</span>
-                        </button>
-                    </span>
-               
-                </p>
-   
+
+            <p>
+                <span class="quantity-wrapper">
+                    <button class="btn btn-quantity" (click)="minusProduct()">
+                        <i class="fas fa-minus"></i>
+                    </button>
+                    <input [(ngModel)]="total" type="text" class="form-control input-quantity">
+                    <button class="btn btn-quantity" (click)="addProduct()">
+                        <i class="fas fa-plus"></i>
+                    </button>
+                    <button (click)="addToCart(pro.id)" class="add-cart-btn btn">
+                        <i class="fas fa-plus"></i><span>ADD TO CART</span>
+                    </button>
+                </span>
+
+            </p>
+
 
             <p class="btn-wishlist">
                 <a href="#" class="btn btn-primary">
@@ -109,7 +108,7 @@
                     <img src="	https://secure.gravatar.com/avatar/1edd7ca6c7b4a8177b4ed2bcd523f723?s=60&d=mm&r=g"
                         alt="">
                 </div>
-             
+
                 <div class="review-details">
                     <p class="username">{{comment.user.username}}</p>
                     <p class="review-date">Today</p>
@@ -120,23 +119,23 @@
                         <i class="fas fa-star"></i>
                     </p>
                 </div>
-            
+
             </div>
 
             <div id="form-comment" style="margin-top: 20px;">
-               <form  [formGroup]="nameForm"  action="">
-                    <textarea name="" placeholder="write some comment" id="textArea" cols="100" rows="5" formControlName="content"></textarea>
+                <form [formGroup]="nameForm" action="">
+                    <textarea name="" placeholder="write some comment" id="textArea" cols="100" rows="5"
+                        formControlName="content"></textarea>
 
                     <button class="btn-primary btn-send" (click)="comment()">send</button>
                 </form>
             </div>
 
 
-              
-     
+
+
         </div>
     </div>
 </section>
 
 <app-related-product></app-related-product>
-

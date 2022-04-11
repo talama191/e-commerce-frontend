@@ -56,15 +56,16 @@ export class TrendingComponent implements OnInit {
   }
 
   addToCart(productId: number) {
-    // this mean user haven't login yet
+    // this mean user haven't login yet 
+    
     if (this.cartId == 0) {
       this.router.navigate(['login'])
     } else {
       this.cartLineForm = new CartLineForm(productId, 1);
       this.cartService.addToCart(this.cartId, this.cartLineForm).subscribe(data => {
-        console.log(data)
-        alert("added to cart")
+        this.cartService.cartComponentInstance.updateCartIcon();
       })
     }
+    
   }
 }

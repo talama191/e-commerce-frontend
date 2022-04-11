@@ -17,7 +17,7 @@
             </a>
             <p style="padding-left: 200px;">{{voucherMessage}}</p>
             <div class="input-coupon" *ngIf="!isShow">
-                <a class="btn-close" (click)="toggleBtn()">x</a>
+                <a class="btn-close" (click)="toggleBtn()"><img class="btn-close" src="assets/img/logo/close-btn.png" alt=""></a>
                 <form  [formGroup]="nameForm"  action="">
                 <input type="text" class="form-control" placeholder="Coupon code" formControlName="code">
             
@@ -58,7 +58,7 @@
                         </p>
                     </td>
                     <td>
-                        <h5>total pricce</h5>
+                        <h5>total price</h5>
                         <h5 style="margin-left: 20px;">£{{item.quantity * item.product.price}}.00</h5>
                     </td>
                 </tr>
