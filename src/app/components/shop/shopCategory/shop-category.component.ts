@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { CartLineForm } from 'src/app/models/cart-line-form';
 import { Product } from 'src/app/models/product';
 import { CartService } from 'src/app/services/cart.service';
+import { NotificationService } from 'src/app/services/notification.service';
 import { ProductService } from 'src/app/services/product.service';
 
 @Component({
@@ -21,7 +22,7 @@ export class ShopCategoryComponent implements OnInit {
     keyword:String;
     cartId: number;
     cartLineForm: CartLineForm;
-  constructor(private productService:ProductService,private route:ActivatedRoute,private router:Router,private cartService:CartService) { }
+  constructor(private productService:ProductService,private notificationService: NotificationService,private route:ActivatedRoute,private router:Router,private cartService:CartService) { }
 
   ngOnInit(): void {
     this.cartId = Number(localStorage.getItem("userId") as string)
@@ -64,7 +65,7 @@ addToCart(productId: number) {
   } else {
     this.cartLineForm = new CartLineForm(productId, 1);
     this.cartService.addToCart(this.cartId, this.cartLineForm).subscribe(data => {
-      this.cartService.cartComponentInstance.updateCartIcon();
+      this.cartService.cartComponentInstance.updateCartIcon();  this.notificationService.notificationInstance.showNotification("Added to cart");
     })
   }
 }

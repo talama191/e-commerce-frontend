@@ -7,6 +7,7 @@ import { CommentForm } from 'src/app/models/comment-form';
 import { Product } from 'src/app/models/product';
 import { CartService } from 'src/app/services/cart.service';
 import { CommentService } from 'src/app/services/comment.service';
+import { NotificationService } from 'src/app/services/notification.service';
 import { ProductService } from 'src/app/services/product.service';
 
 @Component({
@@ -32,6 +33,7 @@ export class ProductDetailComponent implements OnInit{
   constructor(private cartService: CartService
     , private activatedRoute: ActivatedRoute
     , private productService: ProductService
+    ,private notificationService: NotificationService
     , private route: ActivatedRoute, private router: Router
     , private commentService: CommentService,
     private formBuilder: FormBuilder) {
@@ -98,6 +100,7 @@ export class ProductDetailComponent implements OnInit{
       this.cartLineForm = new CartLineForm(productId, this.total);
       this.cartService.addToCart(this.cartId, this.cartLineForm).subscribe(data => {
         this.cartService.cartComponentInstance.updateCartIcon();
+        this.notificationService.notificationInstance.showNotification("Added to cart");
         this.total=0;
       })
     }

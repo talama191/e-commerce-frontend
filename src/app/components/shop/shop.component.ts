@@ -5,6 +5,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { CartLineForm } from 'src/app/models/cart-line-form';
 import { Product } from 'src/app/models/product';
 import { CartService } from 'src/app/services/cart.service';
+import { NotificationService } from 'src/app/services/notification.service';
 import { ProductService } from 'src/app/services/product.service';
 import { HttpServerService } from '../../services/http-server.service';
 
@@ -37,6 +38,7 @@ export class ShopComponent implements OnInit {
 
   constructor(private httpServer: HttpServerService,
               private productService:ProductService,
+              private notificationService: NotificationService,
               private route:ActivatedRoute,
               private cartService:CartService,
               private router:Router,
@@ -93,7 +95,7 @@ export class ShopComponent implements OnInit {
        }else{
         this.cartLineForm = new CartLineForm(productId,1);
         this.cartService.addToCart(this.cartId,this.cartLineForm).subscribe(data =>{
-          this.cartService.cartComponentInstance.updateCartIcon();
+          this.cartService.cartComponentInstance.updateCartIcon();  this.notificationService.notificationInstance.showNotification("Added to cart");
         })
        }
   }

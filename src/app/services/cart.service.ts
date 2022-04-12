@@ -23,6 +23,9 @@ export class CartService {
   viewCart(id: number): Observable<any> {
     return this.httpClient.get(`${this.baseUrl}/viewCart?id=${id}`)
   }
+  clearCart(id: number): Observable<any> {
+    return this.httpClient.delete(`${this.baseUrl}/clear/${id}`);
+  }
 
   addToCart(cartId: number, form: CartLineForm): Observable<any> {
     return this.httpClient.post(`${this.baseUrl}/add/${cartId}`, form)

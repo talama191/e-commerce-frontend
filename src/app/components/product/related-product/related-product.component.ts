@@ -4,6 +4,7 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
 import { CartLineForm } from 'src/app/models/cart-line-form';
 import { Product } from 'src/app/models/product';
 import { CartService } from 'src/app/services/cart.service';
+import { NotificationService } from 'src/app/services/notification.service';
 import { ProductService } from 'src/app/services/product.service';
 
 @Component({
@@ -18,7 +19,7 @@ export class RelatedProductComponent implements OnInit {
   cartLineForm: CartLineForm
   cartId: number
 
-  constructor(  private route:ActivatedRoute,private productSevice:ProductService,private router:Router,private cartService:CartService) { }
+  constructor(  private route:ActivatedRoute,private notificationService: NotificationService,private productSevice:ProductService,private router:Router,private cartService:CartService) { }
   
   ngOnInit(): void {
     this.cartId = Number(localStorage.getItem("userId") as string)
@@ -51,7 +52,7 @@ export class RelatedProductComponent implements OnInit {
     } else {
       this.cartLineForm = new CartLineForm(productId, 1);
       this.cartService.addToCart(this.cartId, this.cartLineForm).subscribe(data => {
-        this.cartService.cartComponentInstance.updateCartIcon();
+        this.cartService.cartComponentInstance.updateCartIcon();  this.notificationService.notificationInstance.showNotification("Added to cart");
       })
     }
   }
