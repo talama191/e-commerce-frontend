@@ -70,15 +70,20 @@
         </div>
         <div class="form-group">
           <label for="exampleInputPassword1">Category</label>
-          <input
-            type="text"
-            name="category"
-            ngModel
-            #category="ngModel"
-            class="form-control"
-            id="exampleInputPassword1"
-            placeholder="Enter category"
-          />
+          <select
+          name="category"
+          ngModel
+          #category="ngModel"
+          class="form-control"
+          >
+            <option value="ACCESSORIES" selected>ACCESSORIES</option>
+            <option value="BAGS">BAGS</option>
+            <option value="MEN">MEN</option>
+            <option value="WOMEN">WOMEN</option>
+            <option value="SHOES">SHOES</option>
+            <option value="Thể thao">Thể thao</option>
+            <option value="Văn phòng phẩm">Văn phòng phẩm</option>
+          </select>
         </div>
         <div class="form-group">
           <label for="exampleInputPassword1">Image 1</label>

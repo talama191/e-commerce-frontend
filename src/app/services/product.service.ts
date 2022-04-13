@@ -46,12 +46,11 @@ export class ProductService {
     const formData: FormData = new FormData();
     formData.append('file', img1,img1.name);
     formData.append('file', img2,img2.name);
-
+      
     let headers= new HttpHeaders();
 
-    headers.set('Content-Type', '');
-    headers.set('Accept', "multipart/form-data"); 
-
+    headers.append('Content-Type', 'multipart/form-data');
+    headers.append('Accept', '*/*'); 
     return this.httpClient.post( `${this.baseUrl}/add?name=${name}&price=${price}&shortDescription=${shortDescription}&longDescription=${longDescription}&categoryName=${categoryName}`, formData);
     }
 

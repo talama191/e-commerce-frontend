@@ -18,24 +18,26 @@ export class AddProductComponent implements OnInit {
   }
 
   addProduct(form: NgForm) {
-    console.log(form.controls.name.value);
     let name = form.controls.name.value
     let price = form.controls.price.value
     let shortDescription = form.controls.shortDescription.value
     let longDescription = form.controls.longDescription.value
     let category = form.controls.category.value
-    let image1 = form.controls.image1.value
-    let image2 = form.controls.image2.value
-    console.log(image2);
+    let image1 = this.selectedImage1
+    let image2 = this.selectedImage2
     
-    this.productService.addProduct(name,price,shortDescription,longDescription,category,image1,image2)
+    let result = this.productService.addProduct(name,price,shortDescription,longDescription,category,image1,image2)
+    console.log(result);
+    
   }
 
   selectFile1(event: Event) {
-    this.selectedImage1 = event.target!.files;
+    const target= event.target as HTMLInputElement;
+    this.selectedImage1 = (target.files as FileList)[0];
   }
   selectFile2(event: Event) {
-    this.selectedImage2 = event.target!.files;
+    const target= event.target as HTMLInputElement;
+    this.selectedImage2 = (target.files as FileList)[0];
   }
 
 }
