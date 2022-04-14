@@ -26,8 +26,12 @@ export class AddProductComponent implements OnInit {
     let image1 = this.selectedImage1
     let image2 = this.selectedImage2
     
-    let result = this.productService.addProduct(name,price,shortDescription,longDescription,category,image1,image2)
-    console.log(result);
+    this.productService.addProduct(name,price,shortDescription,longDescription,category,image1,image2).
+      subscribe({
+      next: (response) => alert('success')
+      ,
+      error: (error) => alert('failed'),
+    });
     
   }
 

@@ -15,7 +15,7 @@ export class AdminComponent implements OnInit {
   constructor(private route: ActivatedRoute, private httpServer: HttpServerService,private productService:ProductService) { }
 
   ngOnInit(): void {
-        this.productService.getProduct().subscribe(data =>{
+        this.productService.gettrending().subscribe(data =>{
             this.products = data
         })
   }

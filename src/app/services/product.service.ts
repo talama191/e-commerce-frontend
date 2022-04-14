@@ -44,14 +44,9 @@ export class ProductService {
     img1: File, 
     img2:File ):Observable<any>{
     const formData: FormData = new FormData();
-    formData.append('file', img1,img1.name);
-    formData.append('file', img2,img2.name);
-      
-    let headers= new HttpHeaders();
-
-    headers.append('Content-Type', 'multipart/form-data');
-    headers.append('Accept', '*/*'); 
-    return this.httpClient.post( `${this.baseUrl}/add?name=${name}&price=${price}&shortDescription=${shortDescription}&longDescription=${longDescription}&categoryName=${categoryName}`, formData);
+    formData.append('img1', img1);
+    formData.append('img2', img2);
+    return this.httpClient.post( `${this.baseUrl}/add?name=${name}&price=${price}&shortDescription=${shortDescription}&longDescription=${longDescription}&categoryName=${categoryName}`, formData)
     }
 
   uploadImage(img1: File):Observable<any>{

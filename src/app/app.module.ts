@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { AppRoutingModule } from './app-routing.module';
 import { LayoutModule } from './components/layout/layout.module';
+import { DataTablesModule } from 'angular-datatables';
 
 import { AdminModule } from './components/admin/admin.module'
 import { CartModule } from './components/cart/cart.module';
@@ -29,6 +30,7 @@ import { UserProfileModule } from './components/user-profile/user-profile.module
   imports: [
     BrowserModule,
     FormsModule,
+    DataTablesModule,
     CarouselModule,
     AppRoutingModule,
     BrowserAnimationsModule,
