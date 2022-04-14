@@ -7,7 +7,7 @@ import { PaymentInfo } from '../models/payment-info';
   providedIn: 'root'
 })
 export class CheckoutService {
-   private baseUrl = "http://localhost:8080/checkout"
+   private baseUrl = "https://sqa-backend.herokuapp.com/checkout"
    private publicKey = "pk_test_51KVtIKJvWHPiWlgY8CWPvc5APqYOgNXAvBKleIE3LKNh4UoEktd6bU1EjS4CcasThiVNxNduwPbF3Otx0FTTydcv00ZDwtNFxS"
   constructor(private httpClient:HttpClient) { }
   

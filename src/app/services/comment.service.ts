@@ -7,7 +7,7 @@ import { CommentForm } from '../models/comment-form';
   providedIn: 'root'
 })
 export class CommentService {
-  private baseUrl = 'http://localhost:8080/comment';
+  private baseUrl = 'https://sqa-backend.herokuapp.com/comment';
   constructor(private httpClient:HttpClient) { }
 
   getComment(productId:number):Observable<any>{
