@@ -31,7 +31,9 @@ h2{
 }
 
 .shop .product-item .img-wrapper .steady-image {
-    width: 100%;
+     width: 100%; /* or any custom size */
+    height: 100%; 
+    object-fit: contain;
 }
 
 .shop .product-item .img-wrapper .hover-image {

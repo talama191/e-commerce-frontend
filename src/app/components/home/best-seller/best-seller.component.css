@@ -24,7 +24,9 @@
 
 .aifai-trending .product-item .img-wrapper .hover-image {
     position: absolute;
-    top: 0;object-fit: cover;
+    top: 0;width: 100%; /* or any custom size */
+    height: 100%; 
+    object-fit: contain;
     z-index: -1;
 }
 
@@ -37,7 +39,9 @@
 }
 
 .aifai-trending .product-item .img-wrapper:hover .hover-image {
-    opacity: 1;object-fit: cover;
+    opacity: 1;width: 100%; /* or any custom size */
+    height: 100%; 
+    object-fit: contain;
 }
 
 .aifai-trending .product-item .info-wrapper {
