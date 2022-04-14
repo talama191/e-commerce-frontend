@@ -29,6 +29,11 @@
     object-fit: contain;
     z-index: -1;
 }
+.steady-image{
+    height: 100%; 
+    width: 100%;
+    object-fit: contain;
+}
 
 .aifai-trending .product-item .img-wrapper img {
     transition: all linear 0.3s;

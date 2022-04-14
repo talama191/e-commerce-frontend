@@ -16,7 +16,7 @@
 }
 .aifai-trending .product-item .img-wrapper {
     display: block;
-    height: 300px;
+    height: 100%; 
     width: 100%;
     overflow: hidden;
     position: relative;
@@ -25,9 +25,13 @@
 .aifai-trending .product-item .img-wrapper .hover-image {
     position: absolute;
     top: 0;
-    z-index: -1;
-    width: 100%; /* or any custom size */
+    z-index: -1;height: 100%; 
+    width: 100%;
+    object-fit: contain;
+}
+.steady-image{
     height: 100%; 
+    width: 100%;
     object-fit: contain;
 }
 
