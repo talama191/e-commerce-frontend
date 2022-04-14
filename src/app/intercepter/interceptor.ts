@@ -8,7 +8,7 @@ export class Interceptor implements HttpInterceptor {
     constructor() { }
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
         if (localStorage.getItem('authToken') != null) {
-            // const wso2AccessKey = environment.wso2AccessKey;
+            const wso2AccessKey = environment.wso2AccessKey;
             const authToken = localStorage.getItem('authToken');
             const headers = new HttpHeaders({
                 'Content-Type': 'application/json',

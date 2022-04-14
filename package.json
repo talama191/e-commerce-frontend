@@ -1,8 +1,5 @@
 {
   "description": "a really cool app",
-  "engines": {
-    "node": "6.11.1"
-  },
   "name": "aifai-inteface",
   "version": "0.0.0",
   "scripts": {
