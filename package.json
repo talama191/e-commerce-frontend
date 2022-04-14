@@ -50,5 +50,16 @@
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "~1.7.0",
     "typescript": "~4.3.5"
-  }
+  },
+  "main": "karma.conf.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vituan1912000/SE2-Front-End.git"
+  },
+  "author": "tuan anh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vituan1912000/SE2-Front-End/issues"
+  },
+  "homepage": "https://github.com/vituan1912000/SE2-Front-End#readme"
 }
