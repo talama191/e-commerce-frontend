@@ -1,7 +1,8 @@
 {
   "description": "a really cool app",
   "engines": {
-    "node": "16.10.0"
+    "node": "14.18.1",
+    "npm":"6.14.15"
   },
   "name": "aifai-inteface",
   "version": "0.0.0",
