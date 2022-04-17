@@ -9,11 +9,9 @@
     <app-sidenav></app-sidenav>
     <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
       <div>
-        <button class="btn btn-primary" type="button">
-          <a href="admin/product" class="text-light">Back</a>
-        </button>
-      </div>
-      <form #f="ngForm" (ngSubmit)="addProduct(f)">
+        <a href="admin/product" class="text-light"><button class="btn btn-success mt-3" type="button">Back</button></a>
+  </div>
+      <form class="mt-3" #f="ngForm" (ngSubmit)="addProduct(f)">
         <div class="form-group">
           <label for="exampleInputEmail1">ProductName</label>
           <input

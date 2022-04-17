@@ -9,11 +9,10 @@
       <app-sidenav></app-sidenav>
       <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
           <div>
-              <button class="btn btn-primary" type="button">
-                <a href="admin/category" class="text-light">Back</a>
-              </button>
+                <a href="admin/category" class="text-light"><button class="btn btn-success mt-3" type="button">Back</button></a>
           </div>
-          <form #f="ngForm" (ngSubmit)="addCategory(f)">
+          <form class="mt-3" #f="ngForm" (ngSubmit)="addCategory(f)">
+            <label for="category">ProductName</label>
             <div class="form-group">
               <input
                 type="text"

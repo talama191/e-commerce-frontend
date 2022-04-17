@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./products.component.css']
 })
 export class ProductsComponent implements OnInit {
+  dataTable: any
   products: Product[];
   pagingProducts: Product[];
   product:Product;
@@ -38,10 +39,12 @@ export class ProductsComponent implements OnInit {
     
   }
   deleteProduct(id: number) {
-    this.productService.delete(id).subscribe(data =>{
-        console.log(data.status);
-        
-    });
+    this.productService.delete(id).subscribe()
+    
+    this.productService.getProduct().subscribe(data =>{
+      this.products = data
+      this.pagingProducts = this.products.slice(this.pageIndex*this.pageSize,this.pageIndex*this.pageSize+this.pageSize)
+  })
     
   }
   editProduct(id: number) {
