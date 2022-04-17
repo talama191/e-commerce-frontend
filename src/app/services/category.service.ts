@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 
@@ -12,5 +13,9 @@ export class CategoryService {
 
   findAll():Observable<any>{
     return this.httpClient.get(`${this.baseUrl}/all`);
+  }
+
+  addCategory(form: NgForm):Observable<any> {
+    return this.httpClient.post(`${this.baseUrl}/addCategory`, form)
   }
 }

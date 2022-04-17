@@ -42,6 +42,5 @@ export class CartComponent implements OnInit {
     }else{
       this.router.navigate(['cart'])
     }
-
   }
 }

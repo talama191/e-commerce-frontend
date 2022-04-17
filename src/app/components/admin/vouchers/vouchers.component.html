@@ -2,7 +2,7 @@
 <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
     <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Company name</a>
     <div>
-      <a class="text-danger" href="#">Sign out </a>
+      <a class="text-danger" href="/admin/login">Sign out </a>
     </div>
   </nav>
 <div class="container-fluid">
@@ -22,20 +22,19 @@
           <table class="table table-striped table-sm">
             <thead>
               <tr>
-                <th>#</th>
-                <th>Header</th>
-                <th>Header</th>
-                <th>Header</th>
-                <th>Header</th>
+                <th>ID</th>
+                <th>CODE</th>
+                <th>Discount percent</th>
+                <th colspan="2"></th>
               </tr>
             </thead>
-            <tbody>
+            <tbody *ngFor="let voucher of vouchers">
               <tr>
-                <td>1,001</td>
-                <td>Lorem</td>
-                <td>ipsum</td>
-                <td>dolor</td>
-                <td>hehe</td>
+                <td>{{voucher.id}}</td>
+                <td>{{ voucher.code }}</td>
+                <td>{{ voucher.discountPercent }}</td>
+                <td><button class="btn btn-primary" (click)="editVoucher(voucher.id)" type="button">Edit</button></td>
+                <td><button class="btn btn-danger" type="button" (click)="deleteVoucher(voucher.id)">Delete</button></td>
               </tr>
             </tbody>
           </table>

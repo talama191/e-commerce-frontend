@@ -18,7 +18,8 @@ import { CategoriesComponent } from './categories/categories.component';
 import { AddCategoryComponent } from './add-category/add-category.component';
 import { EditCategoryComponent } from './edit-category/edit-category.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { DataTablesModule } from "angular-datatables";
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -34,17 +35,18 @@ import { DataTablesModule } from "angular-datatables";
     AddVoucherComponent,
     CategoriesComponent,
     AddCategoryComponent,
-    EditCategoryComponent
+    EditCategoryComponent,
+    LoginComponent
     
   ],
   imports: [
     CommonModule,
     FormsModule,
-    DataTablesModule,
     AdminRoutingModule,
     FontAwesomeModule,
     BrowserModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatPaginatorModule
   ]
 })
 export class AdminModule {

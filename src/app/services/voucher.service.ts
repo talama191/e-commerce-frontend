@@ -12,4 +12,7 @@ export class VoucherService {
   getVoucerByCode(code:String):Observable<any>{
     return this.httpClinet.get(`${this.baseUrl}/code?code=${code}`)
   }
+  getVoucherList():Observable<any>{
+    return this.httpClinet.get(`${this.baseUrl}/list`)
+  }
 }

@@ -22,6 +22,10 @@ export class ProductService {
     return this.httpClient.get(`${this.baseUrl}/${id}`)
   }
 
+  delete(id:number): Observable<any>{
+    return this.httpClient.delete(`${this.baseUrl}/delete?id=${id}`)
+  }
+
   getPagable(request:any): Observable<any>{
     const params = request;
     return this.httpClient.get(`${this.baseUrl}/pagination`,{params})

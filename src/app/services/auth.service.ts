@@ -40,6 +40,22 @@ export class AuthService {
     );
   }
 
+  adminLogin(form: NgForm) {
+    const url = `${this.REST_URL}/api/auth/login`;
+    return this.http.post<any>(url, form.value, this.httpOptions).subscribe(data => {
+      this.authToken = data.tokenType + ' ' + data.jwt;
+      localStorage.setItem('authToken', this.authToken);
+     console.log(data.userDetails.authorities[0].authority)
+      localStorage.setItem('role', data.userDetails.authorities[0].authority)
+      localStorage.setItem('userId', data.userDetails.id)
+      this.router.navigate(['/admin'])
+    }, error => {
+         this.router.navigate(["/admin/login"])
+         alert("wrong username or password")
+    }
+    );
+  }
+
   isLoggedIn() {
     if (localStorage.getItem('authToken')) {
       return true;
