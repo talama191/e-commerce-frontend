@@ -1,6 +1,6 @@
 <p>products works!</p>
 <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
-    <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Company name</a>
+    <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">E-commerce</a>
     <div>
       <a class="text-danger" href="/admin/login">Sign out </a>
     </div>
@@ -34,10 +34,10 @@
                 <td>{{product.id}}</td>
                 <td><img src="{{product.img1}}" width="50px" height="50px" alt=""></td>
                 <td>{{ product.name }}</td>
-                <td>{{ product.short_description }}</td>
+                <td>{{ product.shortDescription }}</td>
                 <td>{{ product.price }}</td>
                 <td>{{ product.category.name }}</td>
-                <td><button class="btn btn-primary" (click)="editProduct(product.id)" type="button">Edit</button></td>
+                <td><a href="/admin/product/edit/{{product.id}}"><button class="btn btn-primary" type="button">Edit</button></a></td>
                 <td><button class="btn btn-danger" type="button" (click)="deleteProduct(product.id)">Delete</button></td>
               </tr>
             </tbody>

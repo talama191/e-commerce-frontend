@@ -23,7 +23,7 @@
                 <th>ID</th>
                 <th>CODE</th>
                 <th>Discount percent</th>
-                <th colspan="2"></th>
+                <th></th>
               </tr>
             </thead>
             <tbody *ngFor="let voucher of vouchers">
@@ -31,7 +31,6 @@
                 <td>{{voucher.id}}</td>
                 <td>{{ voucher.code }}</td>
                 <td>{{ voucher.discountPercent }}</td>
-                <td><button class="btn btn-primary" (click)="editVoucher(voucher.id)" type="button">Edit</button></td>
                 <td><button class="btn btn-danger" type="button" (click)="deleteVoucher(voucher.id)">Delete</button></td>
               </tr>
             </tbody>

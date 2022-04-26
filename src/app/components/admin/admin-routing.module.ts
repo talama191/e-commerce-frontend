@@ -3,14 +3,11 @@ import { AuthGuard } from 'src/app/authAdmin.guard'
 import { RouterModule, Routes } from '@angular/router'
 import { AdminComponent } from './admin/admin.component'
 import { OrdersComponent } from './orders/orders.component'
-import { AddOrderComponent } from './add-order/add-order.component'
-import { EditOrderComponent } from './edit-order/edit-order.component'
 import { ProductsComponent } from './products/products.component'
 import { AddProductComponent } from './add-product/add-product.component'
 import { EditProductComponent } from './edit-product/edit-product.component'
 import { CategoriesComponent } from './categories/categories.component'
 import { AddCategoryComponent } from './add-category/add-category.component'
-import { EditCategoryComponent } from './edit-category/edit-category.component'
 import { VouchersComponent } from './vouchers/vouchers.component'
 import { AddVoucherComponent } from './add-voucher/add-voucher.component'
 import { LoginComponent } from './login/login.component'
@@ -25,14 +22,6 @@ const routes: Routes = [
       },
       {
         path: 'order', component: OrdersComponent,
-        canActivate: [AuthGuard]
-      },
-      {
-        path: 'order/add', component: AddOrderComponent,
-        canActivate: [AuthGuard]
-      },
-      {
-        path: 'order/edit/:id', component: EditOrderComponent,
         canActivate: [AuthGuard]
       },
       {
@@ -53,10 +42,6 @@ const routes: Routes = [
       },
       {
         path: 'category/add', component: AddCategoryComponent,
-        canActivate: [AuthGuard]
-      },
-      {
-        path: 'category/edit/:id', component: EditCategoryComponent,
         canActivate: [AuthGuard]
       },
       {

@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class CategoryService {
-  private baseUrl = 'http://localhost:8080/category';
+  private baseUrl = 'https://ecommerce-hanu-fit.herokuapp.com/category';
   constructor(private httpClient: HttpClient, private router: Router) { }
 
   findAll():Observable<any>{
@@ -16,6 +16,10 @@ export class CategoryService {
   }
 
   addCategory(form: NgForm):Observable<any> {
-    return this.httpClient.post(`${this.baseUrl}/addCategory`, form)
+    const data = {
+      "id": 0,
+      "name": form.value.name
+    }
+    return this.httpClient.post(`${this.baseUrl}/addCategory`, data)
   }
 }

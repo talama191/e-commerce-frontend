@@ -20,7 +20,7 @@ export class AuthService {
       'Content-Type': 'application/json'
     })
   }
-  private REST_URL = 'http://localhost:8080';
+  private REST_URL = 'https://ecommerce-hanu-fit.herokuapp.com';
   errorData: {};
   constructor(private http: HttpClient, private router: Router) { }
 

@@ -19,10 +19,15 @@ export class VouchersComponent implements OnInit {
       this.vouchers = data
   })
   }
-  editVoucher(id: number) {
-
-  }
   deleteVoucher(id: number) {
-
+    this.voucherService.deleteVoucher(id).subscribe({
+      next: (response) => {
+        alert('success');
+        window.location.reload();
+      }
+      ,
+      error: (error) => console.log(error)
+      ,
+    });
   }
 }

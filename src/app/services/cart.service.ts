@@ -11,7 +11,7 @@ import { Product } from '../models/product';
 })
 export class CartService {
 
-  private baseUrl = 'http://localhost:8080/cart';
+  private baseUrl = 'https://ecommerce-hanu-fit.herokuapp.com/cart';
   constructor(private httpClient:HttpClient) {
     
   }
@@ -37,5 +37,8 @@ export class CartService {
      return this.httpClient.get(`${this.baseUrl}/getTotal?cartId=${cartId}`)
    }
 
+   getOrders():Observable<any>{
+     return this.httpClient.get('https://ecommerce-hanu-fit.herokuapp.com/order/getOrders')
+   }
     
 }

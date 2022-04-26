@@ -8,7 +8,7 @@ import { catchError } from 'rxjs/operators';
 })
 
 export class HttpServerService {
-  private REST_URL = 'https://localhost:8243/api/v0';
+  private REST_URL = 'https://ecommerce-hanu-fit.herokuapp.com/api/v0';
   constructor(private http: HttpClient) {}
   getProducts(): Observable<any> {
     const url = `${this.REST_URL}/product/viewList`;

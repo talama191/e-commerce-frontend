@@ -17,7 +17,8 @@ export class AddCategoryComponent implements OnInit {
     this.categoryService.addCategory(form).subscribe({
       next: (response) => alert('success')
       ,
-      error: (error) => alert('failed'),
+      error: (error) => console.log(error)
+      ,
     });
   }
 }

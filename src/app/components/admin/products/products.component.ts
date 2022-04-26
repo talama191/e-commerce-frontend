@@ -21,10 +21,13 @@ export class ProductsComponent implements OnInit {
   constructor(private route: ActivatedRoute, private httpServer: HttpServerService,private productService:ProductService) { }
 
   ngOnInit(): void {
-        this.productService.getProduct().subscribe(data =>{
-            this.products = data
-            this.pagingProducts = this.products.slice(0,10)
-        })
+       this.loadP()
+  }
+  loadP(){
+    this.productService.getProduct().subscribe(data =>{
+      this.products = data
+      this.pagingProducts = this.products.slice(0,10)
+  })
   }
   getRequestParam(request:any){
     this.productService.getPagable(request).subscribe(data=>{
@@ -39,12 +42,15 @@ export class ProductsComponent implements OnInit {
     
   }
   deleteProduct(id: number) {
-    this.productService.delete(id).subscribe()
-    
-    this.productService.getProduct().subscribe(data =>{
-      this.products = data
-      this.pagingProducts = this.products.slice(this.pageIndex*this.pageSize,this.pageIndex*this.pageSize+this.pageSize)
-  })
+    if(confirm("Are you sure to delete product "+ id)) {
+    this.productService.delete(id).subscribe(data=>{
+      alert("success")
+      this.loadP()
+    }, error =>{
+      alert("failed")
+    }
+    )
+    }
     
   }
   editProduct(id: number) {

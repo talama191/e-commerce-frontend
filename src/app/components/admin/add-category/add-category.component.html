@@ -1,34 +1,44 @@
 <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
-    <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Company name</a>
-    <div>
-      <a class="text-danger" href="/admin/login">Sign out </a>
-    </div>
-  </nav>
-<div class="container-fluid">
-    <div class="row">
-      <app-sidenav></app-sidenav>
-      <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
-          <div>
-                <a href="admin/category" class="text-light"><button class="btn btn-success mt-3" type="button">Back</button></a>
-          </div>
-          <form class="mt-3" #f="ngForm" (ngSubmit)="addCategory(f)">
-            <label for="category">ProductName</label>
-            <div class="form-group">
-              <input
-                type="text"
-                class="form-control"
-                name="category"
-                ngModel
-                required
-                #category="ngModel"
-                id="category"
-                placeholder="Category name"
-              />
-            </div>
-      
-            <button class="btn btn-primary" type="submit">Submit</button>
-          </form>
-  
-      </main>
-    </div>
+  <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">E-commerce</a>
+  <div>
+    <a class="text-danger" href="/admin/login">Sign out </a>
   </div>
+</nav>
+<div class="container-fluid">
+  <div class="row">
+    <app-sidenav></app-sidenav>
+    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+      <div>
+        <a href="admin/category" class="text-light"
+          ><button class="btn btn-success mt-3" type="button">Back</button></a
+        >
+      </div>
+      <form class="mt-3" #f="ngForm" (ngSubmit)="addCategory(f)">
+        
+        <input
+          type="hidden"
+          name="id"
+          ngModel
+          required
+          #id="ngModel"
+
+        />
+        <div class="form-group">
+          <label for="category">Category name</label>
+          <input
+            type="text"
+            class="form-control"
+            name="name"
+            ngModel
+            required
+            #name="ngModel"
+            id="category"
+            placeholder="Category name"
+          />
+        </div>
+
+        <button class="btn btn-primary" type="submit">Submit</button>
+      </form>
+    </main>
+  </div>
+</div>

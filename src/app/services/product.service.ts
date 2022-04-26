@@ -8,7 +8,7 @@ import { Product } from '../models/product';
   providedIn: 'root'
 })
 export class ProductService {
-  private baseUrl = 'http://localhost:8080/product';
+  private baseUrl = 'https://ecommerce-hanu-fit.herokuapp.com/product';
   constructor(private httpClient: HttpClient, private router: Router) { }
 
   getProduct(): Observable<any>{
@@ -23,7 +23,7 @@ export class ProductService {
   }
 
   delete(id:number): Observable<any>{
-    return this.httpClient.delete(`${this.baseUrl}/delete?id=${id}`)
+    return this.httpClient.delete(`${this.baseUrl}/delete/{id}?id=${id}`)
   }
 
   getPagable(request:any): Observable<any>{
@@ -50,6 +50,8 @@ export class ProductService {
     const formData: FormData = new FormData();
     formData.append('img1', img1);
     formData.append('img2', img2);
+    console.log(formData);
+    
     return this.httpClient.post( `${this.baseUrl}/add?name=${name}&price=${price}&shortDescription=${shortDescription}&longDescription=${longDescription}&categoryName=${categoryName}`, formData)
     }
 
