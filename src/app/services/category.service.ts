@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class CategoryService {
-  private baseUrl = 'https://sqa-backend.herokuapp.com/category';
+  private baseUrl = 'https://ecommerce-hanu-fit.herokuapp.com/category';
   constructor(private httpClient: HttpClient, private router: Router) { }
 
   findAll():Observable<any>{

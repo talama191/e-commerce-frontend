@@ -8,7 +8,7 @@ import { Product } from '../models/product';
   providedIn: 'root'
 })
 export class ProductService {
-  private baseUrl = 'https://sqa-backend.herokuapp.com/product';
+  private baseUrl = 'https://ecommerce-hanu-fit.herokuapp.com/product';
   constructor(private httpClient: HttpClient, private router: Router) { }
 
   getProduct(): Observable<any>{
@@ -45,7 +45,7 @@ export class ProductService {
     headers.set('Content-Type', '');
     headers.set('Accept', "multipart/form-data"); 
 
-    return this.httpClient.post( `https://sqa-backend.herokuapp.com/minio/upload/bucket/files`, formData);
+    return this.httpClient.post( `https://ecommerce-hanu-fit.herokuapp.com/minio/upload/bucket/files`, formData);
   }
 
 }

@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class VoucherService {
-   private baseUrl = 'https://sqa-backend.herokuapp.com/voucher';
+   private baseUrl = 'https://ecommerce-hanu-fit.herokuapp.com/voucher';
   constructor(private httpClinet:HttpClient) { }
 
   getVoucerByCode(code:String):Observable<any>{

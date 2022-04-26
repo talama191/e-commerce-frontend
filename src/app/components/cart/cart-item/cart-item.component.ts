@@ -148,7 +148,7 @@ export class CartItemComponent implements OnInit {
 
     // this is a normal http calls for a backend api
     this.http
-      .post(`https://sqa-backend.herokuapp.com/checkout/payment`, payment)
+      .post(`https://ecommerce-hanu-fit.herokuapp.com/checkout/payment`, payment)
       .subscribe((data: any) => {
         // I use stripe to redirect To Checkout page of Stripe platform
         stripe.redirectToCheckout({

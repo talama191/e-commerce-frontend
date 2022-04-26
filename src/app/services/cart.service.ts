@@ -14,7 +14,7 @@ export class CartService {
 
   cartComponentInstance: CartComponent;
 
-  private baseUrl = 'https://sqa-backend.herokuapp.com/cart';
+  private baseUrl = 'https://ecommerce-hanu-fit.herokuapp.com/cart';
   constructor(private httpClient: HttpClient) {
 
   }
