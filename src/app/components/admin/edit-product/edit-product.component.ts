@@ -24,7 +24,8 @@ export class EditProductComponent implements OnInit {
     })
   }
 
-  addProduct(form: NgForm) {
+  editProduct(form: NgForm) {
+    let id = form.controls.id.value
     let name = form.controls.name.value
     let price = form.controls.price.value
     let shortDescription = form.controls.shortDescription.value
@@ -34,7 +35,7 @@ export class EditProductComponent implements OnInit {
     let image2 = this.selectedImage2
     
     
-    this.productService.addProduct(name,price,shortDescription,longDescription,category,image1,image2).
+    this.productService.editProduct(id,name,price,shortDescription,longDescription,category,image1,image2).
       subscribe({
       next: (response) => alert('success')
       ,
