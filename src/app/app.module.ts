@@ -40,8 +40,7 @@ import { ShopCategoryComponent } from './components/shop/shopCategory/shop-categ
     ProductModule,
     ShopModule,
     LoginModule,
-    ReactiveFormsModule
-   
+    ReactiveFormsModule,
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: Interceptor, multi: true}
