@@ -17,6 +17,7 @@
   "private": true,
   "dependencies": {
     "@angular/animations": "~12.2.0",
+    "@angular/cdk": "^12.2.13",
     "@angular/common": "~12.2.0",
     "@angular/compiler": "~12.2.0",
     "@angular/core": "~12.2.0",
@@ -38,6 +39,7 @@
     "owl.carousel": "^2.3.4",
     "path": "^0.12.7",
     "rxjs": "~6.6.0",
+    "rxjs-compat": "^6.6.7",
     "stripe": "^8.209.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"

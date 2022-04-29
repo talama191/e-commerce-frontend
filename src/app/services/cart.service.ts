@@ -44,4 +44,8 @@ export class CartService {
   }
 
 
+   getOrders():Observable<any>{
+     return this.httpClient.get('https://ecommerce-hanu-fit.herokuapp.com/order/getOrders')
+   }
+    
 }

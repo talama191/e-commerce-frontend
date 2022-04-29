@@ -22,6 +22,10 @@ export class ProductService {
     return this.httpClient.get(`${this.baseUrl}/${id}`)
   }
 
+  delete(id:number): Observable<any>{
+    return this.httpClient.delete(`${this.baseUrl}/delete/{id}?id=${id}`)
+  }
+
   getPagable(request:any): Observable<any>{
     const params = request;
     return this.httpClient.get(`${this.baseUrl}/pagination`,{params})
@@ -35,7 +39,36 @@ export class ProductService {
     return this.httpClient.get(`${this.baseUrl}/getByCategory/${categoryName}`)
   }
 
-
+  addProduct(
+    name:String, 
+    price:number,
+    shortDescription:String,
+    longDescription:String, 
+    categoryName:String, 
+    img1: File, 
+    img2:File ):Observable<any>{
+    const formData: FormData = new FormData();
+    formData.append('img1', img1);
+    formData.append('img2', img2);
+    console.log(formData);
+    
+    return this.httpClient.post( `${this.baseUrl}/add?name=${name}&price=${price}&shortDescription=${shortDescription}&longDescription=${longDescription}&categoryName=${categoryName}`, formData)
+    }
+    editProduct(
+      id:number,
+      name:String, 
+      price:number,
+      shortDescription:String,
+      longDescription:String, 
+      categoryName:String, 
+      img1: File, 
+      img2:File ):Observable<any>{
+      const formData: FormData = new FormData();
+      formData.append('img1', img1);
+      formData.append('img2', img2);
+      
+      return this.httpClient.put( `${this.baseUrl}/edit/${id}?name=${name}&price=${price}&shortDescription=${shortDescription}&longDescription=${longDescription}&categoryName=${categoryName}`, formData)
+      }
   uploadImage(img1: File):Observable<any>{
     const formData: FormData = new FormData();
     formData.append('file', img1,img1.name);

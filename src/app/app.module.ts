@@ -23,7 +23,7 @@ import { ShopCategoryComponent } from './components/shop/shopCategory/shop-categ
 @NgModule({
   declarations: [
     AppComponent,
-    ShopCategoryComponent,
+    ShopCategoryComponent
   ],
   imports: [
     BrowserModule,

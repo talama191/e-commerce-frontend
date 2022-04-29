@@ -1,0 +1,59 @@
+.form-container {
+    margin-top: 7rem;
+  }
+  .form-container .logo{
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  .form-container .logo img{
+    width: 40px;
+    height: 40px;
+    margin-bottom: 2rem;
+  }
+  .login-form {
+    padding: 20px;
+    width: 20rem;
+    background-color: #ebf1f1;
+    border-radius:10px
+  }
+  .login-form form {
+    text-align: center
+  }
+  .login-form form button {
+    border: none;
+    border-radius:20px;
+    width:100%;
+    background-color: #22ba22;
+  }
+  .login-form input {
+    border: 1px solid white;
+    border-radius: 20px;
+    margin-bottom: 30px;
+  }
+  .login-form .recover-signup {
+    margin-top: 10px;
+    border-radius: 20px;
+  }
+  .recover-signup {
+    display:flex;
+  }
+  .recover-signup span {
+    width:50%;
+    text-align: center
+  }
+  .recover-signup span a {
+    text-decoration: none;
+    color: black;
+  }
+  .recover-signup span:hover {
+   background-color: white;
+   border: 1px solid black;
+  }
+  .recover-signup .recover {
+    border-radius: 20px;
+    border: 1px solid white;
+  }
+  .recover-signup .signup {
+    border-radius: 0 20px 20px 0;
+    border: 1px solid white;
+  }
